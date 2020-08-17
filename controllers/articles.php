@@ -4,7 +4,7 @@ require_once 'db.php';
 class Articles extends Database
 {
 
-  public function display_content($element)
+  public function display_all_elements($element)
   {
     if ($element === 'articles') {
       $data = $this->run_query('SELECT * FROM articles WHERE article_archived = 0 ORDER BY article_id DESC LIMIT 10');
@@ -54,7 +54,7 @@ class Articles extends Database
     }
   }
 
-  public function display_element()
+  public function display_single_element()
   {
     $element = $_GET['element'];
     $element_id = $_GET['id'];
@@ -84,7 +84,7 @@ class Articles extends Database
     if(isset($_SESSION['logged_in'])) {
       if ($element['author_username'] === $_SESSION['user']) {
         ?>
-        <button id="handler-tab">edit</button>
+        <!-- <button id="handler-tab">edit</button> -->
         <?php
       }
     }

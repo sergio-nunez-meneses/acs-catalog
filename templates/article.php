@@ -14,10 +14,21 @@ include '../includes/header.php';
     </a></h3>
   </div>
 </section>
+<?php
+if(isset($_SESSION['logged_in'])) {
+  ?>
+  <button id="handler-tab">edit</button>
+  <?php
+}
+?>
 <section class="article-container">
-  <article class="">
-    <?php (new Articles())->display_element(); ?>
+  <article id="articleContainer" class="">
+    <?php (new Articles())->display_single_element(); ?>
   </article>
+  <div id="editorContainer" class="hidden">
+    <?php (new Editor())->content_editor(); ?>
+  </div>
+  <p id="ajaxResponse" class="info"></p>
 </section>
 
 <?php include '../includes/footer.php'; ?>

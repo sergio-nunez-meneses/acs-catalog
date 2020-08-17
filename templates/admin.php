@@ -22,10 +22,10 @@ include '../includes/header.php';
   </div>
   <div class="" style="display: flex; justify-content: space-around; align-content: center; align-items: center;">
     <article id="recentArticles" class="">
-      <?php (new Articles())->display_content('articles'); ?>
+      <?php (new Articles())->display_all_elements('articles'); ?>
     </article>
     <article id="allArticles" class="hidden">
-      <?php (new Articles())->display_content('all_articles'); ?>
+      <?php (new Articles())->display_all_elements('all_articles'); ?>
     </article>
   </div>
 </section>

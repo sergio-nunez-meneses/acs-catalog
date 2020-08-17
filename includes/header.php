@@ -7,6 +7,7 @@ define('REL_PATH', DIRECTORY_SEPARATOR . basename(ABS_PATH) . DIRECTORY_SEPARATO
 require_once ABS_PATH . 'controllers/db.php';
 require_once ABS_PATH . 'controllers/user.php';
 require_once ABS_PATH . 'controllers/articles.php';
+require_once ABS_PATH . 'controllers/editor.php';
 
 $user = new User();
 ?>
