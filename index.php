@@ -9,13 +9,10 @@ $articles = $stmt->fetchAll();
 foreach($articles as $article){
   $pic = $article['article_image'];
   echo "<div class='card'>";
-  echo "<form action='showArticle.php' method='post'>";
-  echo "<input type='submit' name='img' value='$pic'><br>";
-
+  echo "<a href='index.php'><img src='$pic'></a>";
   echo $article['article_title'] . "<br>";
 
   echo $article['DATETIME'] . "<br>";
-  echo "</form>";
   echo "</div>";
 }
 
