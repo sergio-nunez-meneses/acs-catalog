@@ -5,7 +5,8 @@ const SIGN_TAB = getId('sign-in-tab'),
   GEN_BTN = getId('generatorButton'),
   RAND_PASS = getSel('.random-password');
 
-SIGN_UP_FORM.onsubmit = validateForm;
+SIGN_UP_FORM.onsubmit = signUpValidation;
+SIGN_IN_FORM.onsubmit = signInValidation;
 
 function randPassGen() {
   let shuffleChars = CHARS.split('').sort(function() { return 0.5 - Math.random() }).join('');
@@ -25,10 +26,10 @@ function displayForms() {
   }
 }
 
-function validateForm() {
-  let user = getName('username').value,
-    pass = getName('password').value,
-    confirmPass = getName('confirm-password').value,
+function signUpValidation() {
+  let user = getName('username')[0].value,
+    pass = getName('password')[0].value,
+    confirmPass = getName('confirm-password')[0].value,
     displayErrors = getId('displayErrors'),
     error = false,
     errorMsg = '';
@@ -64,6 +65,37 @@ function validateForm() {
 
   if (!error) {
     SIGN_UP_FORM.submit();
+  } else {
+    displayErrors.innerHTML = errorMsg;
+    return false;
+  }
+}
+
+function signInValidation() {
+  let user = getName('username')[0].value,
+    pass = getName('password')[0].value,
+    displayErrors = getId('displayErrors'),
+    error = false,
+    errorMsg = '';
+
+  if (user.length == 0) {
+    error = true;
+    errorMsg += '<p>username cannot be empty</p>';
+  } else if (user.length < 6) {
+    error = true;
+    errorMsg += '<p>username must contain more than 6 characters</p>';
+  }
+
+  if (pass.length == 0) {
+    error = true;
+    errorMsg += '<p>password cannot be empty</p>';
+  } else if (pass.length < 7) {
+    error = true;
+    errorMsg += '<p>password must contain more than 7 characters</p>';
+  }
+
+  if (!error) {
+    SIGN_IN_FORM.submit();
   } else {
     displayErrors.innerHTML = errorMsg;
     return false;
