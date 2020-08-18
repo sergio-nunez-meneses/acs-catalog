@@ -13,7 +13,6 @@ include "header.php";
 <!-- navbar -->
 <div class="mobile-container">
   <div id="navbar">
-    
     <a href="#home" class="active">Home</a>
     <a href="javascript:void(0)">News</a>
     <a href="javascript:void(0)">Contact</a>
@@ -34,6 +33,7 @@ include "header.php";
 
 
 <!-- cards -->
+<div id="back">
 <div class="content-wrapper">
 
   <div class="news-card">
@@ -50,14 +50,14 @@ include "header.php";
   </div>
 
   <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
+    <a href="onepage.php" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
       <h2 class="news-card__title">Amazing Second Title that is Quite Long</h2>
       <div class="news-card__post-date">Jan 29, 2018</div>
       <div class="news-card__details-wrapper">
         <p class="news-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam obcaecati ex natus nulla rem sequi laborum quod fugit&hellip;</p>
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+        <a href="onepage.php" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ include "header.php";
 
 </div>
 
-<button onclick="myFunction()">login</button>
+<!-- <button onclick="myFunction()">login</button>
 
 <div id="myDIV">
   <p>
@@ -129,7 +129,7 @@ include "header.php";
         <input type="submit" name="submit" value="connexion" />
       </p>
   </div>
-</div>
+</div> -->
 
 
 <script>

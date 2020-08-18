@@ -99,21 +99,14 @@ h1 {
   }
 }
 
-
-
 .content {
   padding: 16px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+#back {
+  background-image: url("img/01.jpg");
 }
 
-.sticky+.content {
-  padding-top: 60px;
-}
 
 * {
   box-sizing: border-box;
@@ -271,7 +264,6 @@ h1 {
 
 #footer {
   padding: 3px 10px;
-
   background-color: #053949;
 }
 
@@ -280,5 +272,6 @@ h1 {
 }
 
 li {
-  width: 20rem;
+  text-align: center;
+  width: 23rem;
 }

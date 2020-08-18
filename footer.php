@@ -3,9 +3,12 @@
         <div class="container">
           <ul style="list-style-type: none" class="row d-flex justify-content-center">
             <div class="row pt-4">
-              <li><a href="https://github.com/S-Thibault" style="color:white">Github Sylvain</a></li>
-              <li><a href="https://github.com/sergio-nunez-meneses" style="color:white">Github Sergio</a></li>
-                <li><a href="https://github.com/cyla00" style="color:white">Github Ismail</a></li>
+              <li><a href= "https://github.com/S-Thibault" target="_blank" title="Github"><img src="img/git.png" width="30" height="30" alt=""/></a></li>
+              <!-- <li><a href="https://github.com/S-Thibault" style="color:white">Github Sylvain</a></li> -->
+              <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="img/git.png" width="30" height="30" alt=""/></a></li>
+              <!-- <li><a href="https://github.com/sergio-nunez-meneses" style="color:white">Github Sergio</a></li> -->
+              <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="img/git.png" width="30" height="30" alt=""/></a></li>
+                <!-- <li><a href="https://github.com/cyla00" style="color:white">Github Ismail</a></li> -->
 
 
 
