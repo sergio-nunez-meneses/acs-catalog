@@ -18,6 +18,7 @@
 
 const BTN = document.querySelectorAll(".btn");
 
+const ALL_CATEGORIES = document.querySelectorAll(".all_categories")
 const ECONOMY = document.querySelectorAll(".economy");
 const SPORT = document.querySelectorAll(".sport");
 const CULTURE = document.querySelectorAll(".culture");

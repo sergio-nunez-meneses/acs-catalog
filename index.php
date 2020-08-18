@@ -17,6 +17,7 @@ include "header.php";
     <a href="#home" class="active">Home</a>
     <a href="javascript:void(0)">News</a>
     <a href="javascript:void(0)">Contact</a>
+    <a id="all_categories" href="javascript:void(0)" class="btn">all-categories</a>
     <a id="politics" href="javascript:void(0)" class="btn">politics</a>
     <a id="economy" href="javascript:void(0)" class="btn">economy</a>
     <a id="sport" href="javascript:void(0)" class="btn">sport</a>
