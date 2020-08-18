@@ -32,11 +32,6 @@ $user = new User();
 
       <section>
         <div class="" style="display: flex;justify-content: center;">
-          <?php $db = new Database(); ?>
-        </div>
-      </section>
-      <section>
-        <div class="" style="display: flex;justify-content: center;">
           <!-- login or not login -->
           <?php $user->is_logged(); ?>
         </div>

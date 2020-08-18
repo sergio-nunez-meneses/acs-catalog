@@ -1,12 +1,14 @@
-const EDITOR_CONTAINER = getId('editorContainer'),
+const CREATE_TAB = getId('createTab'),
+  CREATE_CONTAINER = getId('createContainer'),
+  EDITOR_CONTAINER = getId('editorContainer'),
   ARTICLE_CONTAINER = getId('articleContainer'),
   EDITOR_TAB = getId('handler-tab'),
   INFO_TEXT = getId('ajaxResponse');
 
 function ajaxSuccess() {
-  // console.log(this.responseText);
   const AJAX_RESPONSE = JSON.parse(this.responseText);
-  console.log(AJAX_RESPONSE);
+  console.log(AJAX_RESPONSE); // just for debugging
+  // console.log(this.responseText); // just for debugging
 
   if (AJAX_RESPONSE['form'] === 'ajax-element-form') {
     if (AJAX_RESPONSE['action'] === 'edit') {
@@ -87,4 +89,15 @@ function displayAjaxForm() {
   }
 }
 
-EDITOR_TAB.addEventListener('click', displayAjaxForm);
+function displayEditor() {
+  if (CREATE_CONTAINER.classList.contains('hidden')) {
+    CREATE_CONTAINER.classList.remove('hidden');
+    CREATE_TAB.innerHTML = 'hide';
+  } else {
+    CREATE_CONTAINER.classList.add('hidden');
+    CREATE_TAB.innerHTML = 'create';
+  }
+}
+
+if (CREATE_TAB !== null) CREATE_TAB.addEventListener('click', displayEditor);
+if (EDITOR_TAB !== null) EDITOR_TAB.addEventListener('click', displayAjaxForm);

@@ -27,8 +27,8 @@ function displayForms() {
 }
 
 function signUpValidation() {
-  let user = getName('username')[0].value,
-    pass = getName('password')[0].value,
+  let user = getName('username').value,
+    pass = getName('password').value,
     confirmPass = getName('confirm-password')[0].value,
     displayErrors = getId('displayErrors'),
     error = false,

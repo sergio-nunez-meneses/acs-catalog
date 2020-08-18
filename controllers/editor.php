@@ -6,11 +6,12 @@ class Editor extends Database
 
   public function content_editor()
   {
-    $element = '';
-    $element_type = $_GET['element'];
-    $element_id = $_GET['id'];
 
-    if (basename($_SERVER['SCRIPT_FILENAME']) !== 'create.php') {
+    if (basename($_SERVER['SCRIPT_FILENAME']) !== 'admin.php') {
+      $element = '';
+      $element_type = $_GET['element'];
+      $element_id = $_GET['id'];
+
       if ($element_type === 'articles') {
         $stmt = $this->run_query('SELECT * FROM articles JOIN authors ON articles.author_id = authors.author_id WHERE article_id = :element_id', ['element_id' => $element_id]);
         $element = $stmt->fetch();
@@ -72,16 +73,19 @@ class Editor extends Database
       $username = $_SESSION['user'];
       $stmt = $this->run_query('SELECT * FROM authors WHERE author_username = :username', ['username' => $username]);
       $author = $stmt->fetch();
+
+      $stmt = $this->run_query('SELECT COUNT(*) AS total FROM articles');
+      $last_id = $stmt->fetch();
       ?>
 
-      <form id="editorForm" class="" action="../actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
-        <fieldset class="ajax-form-container">
+      <form id="editorForm" class="" action="../actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;" style="display: flex; justify-content: center; padding: 1rem;">
+        <fieldset class="ajax-form-container" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
           <legend>create element</legend>
           <select class="" name="content[]">
             <option value=""></option>
             <option value="articles">article</option>
           </select>
-          <input class="" type="number" name="id" value="" placeholder="element id:">
+          <input class="" type="number" name="id" value="<?php echo $last_id['total'] + 1; ?>" placeholder="element id:">
           <input class="" type="text" name="title" value="" placeholder="element title:">
           <input class="" type="number" name="author" value="<?php echo $author['author_id']; ?>" placeholder="author:">
           <input class="" type="file" multiple name="images[]" value="">
@@ -151,12 +155,12 @@ class Editor extends Database
           $element_archived = 0;
 
           if ($_POST['content'][0] === 'articles') {
-            $this->run_query('INSERT INTO articles VALUES (NULL, :element_title, :element_text, NOW(), :element_image, :author_id, :element_archived)', [
+            $this->run_query('INSERT INTO articles VALUES (NULL, :element_title, :element_image, :element_text, NOW(), :element_archived, :author_id)', [
               'element_title' => $element_title,
-              'element_text' => $element_text,
               'element_image' => $element_image,
-              'author_id' => $author_id,
-              'element_archived' => $element_archived
+              'element_text' => $element_text,
+              'element_archived' => $element_archived,
+              'author_id' => $author_id
             ]);
           }
           $action = $_POST['action'][0];
