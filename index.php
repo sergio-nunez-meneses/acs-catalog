@@ -17,11 +17,11 @@ include "header.php";
     <a href="#home" class="active">Home</a>
     <a href="javascript:void(0)">News</a>
     <a href="javascript:void(0)">Contact</a>
-    <a id="all_categories" href="javascript:void(0)" class="btn">all-categories</a>
-    <a id="politics" href="javascript:void(0)" class="btn">politics</a>
-    <a id="economy" href="javascript:void(0)" class="btn">economy</a>
-    <a id="sport" href="javascript:void(0)" class="btn">sport</a>
-    <a id="culture" href="javascript:void(0)" class="btn">culture</a>
+    <a id="all_categories" class="btn">all-categories</a>
+    <a id="politics" class="btn">politics</a>
+    <a id="economy" class="btn">economy</a>
+    <a id="sport" class="btn">sport</a>
+    <a id="culture" class="btn">culture</a>
     <div class="search-container">
     <form action="/action_page.php">
     <input type="text" placeholder="Search.." name="search">
@@ -35,7 +35,7 @@ include "header.php";
 <!-- cards -->
 <div class="content-wrapper">
 
-  <div class="news-card politics">
+  <div class="politics news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/127513/pexels-photo-127513.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -48,7 +48,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="news-card politics">
+  <div class="economy news-card" >
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -61,7 +61,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="news-card economy">
+  <div class="sport news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -74,7 +74,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="news-card sport">
+  <div class="culture news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -87,7 +87,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="news-card sport">
+  <div class="culture news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -100,7 +100,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="news-card culture">
+  <div class="politics news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
