@@ -28,28 +28,25 @@ class Articles extends Database
       $shorten_text = substr($row[$text], 0, 80);
       ?>
 
-      <div class="element-box" style="border: 1px solid #000; margin: 1rem;">
-        <img class="element-image" src="<?php echo '../public/img/' . $row[$image] ?>">
-        <div class="transparent-box">
-          <div class="element-caption">
-            <header>
-              <h3>
-                <a class="element-title" href="../templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
-                  <?php echo $row[$title]; ?>
-                </a>
-              </h3>
-              <div class="">
-                <p class="element-date">on <?php echo $formatted_date; ?></p>
-                <p class="element-author">by <?php echo $row[$author]; ?></p>
-              </div>
-            </header>
-            <main>
-            <p> <?php echo $shorten_text; ?>...</p>
-            <a class="opacity-low" href="../templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">continue reading</a>
-            </main>
-          </div>
+      <article class="news-card">
+        <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__card-link"></a>
+        <img src="<?php echo 'public/img/' . $row[$image] ?>" alt="" class="news-card__image">
+        <div class="news-card__text-wrapper">
+          <header>
+            <h2 class="news-card__title">
+              <a class="element-title" href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
+                <?php echo $row[$title]; ?>
+              </a>
+            </h2>
+            <p class="news-card__post-date"><?php echo $formatted_date; ?></p>
+            <p class="element-author">by <?php echo $row[$author]; ?></p>
+          </header>
+          <main class="news-card__details-wrapper">
+            <p class="news-card__excerpt"><?php echo $shorten_text; ?>&hellip;</p>
+            <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+          </main>
         </div>
-      </div>
+      </article>
     <?php
     }
   }
@@ -81,7 +78,7 @@ class Articles extends Database
       $formatted_text .= "<p>$paragraph</p>";
     }
 
-    if(isset($_SESSION['logged_in'])) {
+    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
       if ($element['author_username'] === $_SESSION['user']) {
         ?>
         <!-- <button id="handler-tab">edit</button> -->
@@ -89,18 +86,25 @@ class Articles extends Database
       }
     }
     ?>
-
-    <div id="element-<?php echo $element_id; ?>" class="focus-element-container">
-      <section class="focus-element-header">
-        <img id="image-<?php echo $element_id; ?>" class="focus-element-image" src="<?php echo '../public/img/' . $element[$image]; ?>">
-      </section>
-      <div class="focus-content-container">
-        <h2 id="title-<?php echo $element_id; ?>" class="focus-element-title"> <?php echo $element[$title]; ?></h2>
-        <p id="date-<?php echo $element_id; ?>" class="focus-element-date">on <?php echo $formatted_date; ?></p>
-        <p class="focus-element-username">by <?php echo $element['author_username'] ?></p>
-        <article id="text-<?php echo $element_id; ?>" class="focus-element-text"><?php echo $formatted_text; ?></article>
+    <article id="element-<?php echo $element_id; ?>" class="content-wrapper">
+      <div class="news-card">
+        <header>
+          <img id="image-<?php echo $element_id; ?>" src="<?php echo '../public/img/' . $element[$image]; ?>" alt="" class="news-card__image">
+          <div class="news-card__text-wrapper">
+            <h2 id="title-<?php echo $element_id; ?>" class="news-card__title"><?php echo $element[$title]; ?></h2>
+          </div>
+        </header>
       </div>
-    </div>
+      <main>
+        <div class="container">
+          <div class="content">
+            <p id="date-<?php echo $element_id; ?>" class="news-card__post-date">on <?php echo $formatted_date; ?></p>
+            <p id="author-<?php echo $element_id; ?>" class="news-card__details-wrapper">by <?php echo $element['author_username'] ?></p>
+            <p id="text-<?php echo $element_id; ?>"><?php echo $formatted_text; ?></p>
+          </div>
+        </div>
+      </main>
+    </article>
     <?php
   }
 }

@@ -7,7 +7,7 @@ class Editor extends Database
   public function content_editor()
   {
 
-    if (basename($_SERVER['SCRIPT_FILENAME']) !== 'admin.php') {
+    if (basename($_SERVER['SCRIPT_FILENAME']) !== 'index.php') {
       $element = '';
       $element_type = $_GET['element'];
       $element_id = $_GET['id'];
@@ -78,7 +78,7 @@ class Editor extends Database
       $last_id = $stmt->fetch();
       ?>
 
-      <form id="editorForm" class="" action="../actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;" style="display: flex; justify-content: center; padding: 1rem;">
+      <form id="editorForm" class="" action="actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;" style="display: flex; justify-content: center; padding: 1rem;">
         <fieldset class="ajax-form-container" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
           <legend>create element</legend>
           <select class="" name="content[]">

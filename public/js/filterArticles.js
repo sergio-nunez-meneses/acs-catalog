@@ -14,4 +14,4 @@ function displayArticles() {
   }
 }
 
-ARTICLES_TAB.addEventListener('click', displayArticles);
+if (ARTICLES_TAB !== null) ARTICLES_TAB.addEventListener('click', displayArticles);

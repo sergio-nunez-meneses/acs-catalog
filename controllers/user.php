@@ -56,7 +56,7 @@ class User extends Database
       $_SESSION['logged_in'] = true;
       $_SESSION['user'] = $username;
 
-      header('Location:../templates/admin.php');
+      header('Location:../index.php');
     } else {
       header("Location:../index.php?error=yes&error_message=$error_msg");
     }
@@ -84,7 +84,7 @@ class User extends Database
           $_SESSION['logged_in'] = true;
           $_SESSION['user'] = $username;
 
-          header('Location:../templates/admin.php');
+          header('Location:../index.php');
         } else {
           $error_msg .= '<p>password incorrect</p>';
           header("Location:../index.php?error=yes&error_message=$error_msg");
@@ -101,10 +101,9 @@ class User extends Database
   }
   public function is_logged() {
     if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-      // return;
-      echo '<p>not logged in</p>';
+      echo '<p style="color: #fff;">not logged in</p>';
     } else {
-      // include '../include/login_nav.php';
+      include ABS_PATH . 'includes/login_nav.php';
     }
   }
 }
