@@ -35,7 +35,7 @@ include "header.php";
 <!-- cards -->
 <div class="content-wrapper">
 
-  <div class="politics news-card">
+  <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/127513/pexels-photo-127513.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -48,7 +48,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="economy news-card" >
+  <div class="news-card" >
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -61,7 +61,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="sport news-card">
+  <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -74,7 +74,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="culture news-card">
+  <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -87,7 +87,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="culture news-card">
+  <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
@@ -100,7 +100,7 @@ include "header.php";
     </div>
   </div>
 
-  <div class="politics news-card">
+  <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
     <img src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
     <div class="news-card__text-wrapper">
