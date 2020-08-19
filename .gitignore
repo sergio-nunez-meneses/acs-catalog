@@ -1,7 +1,0 @@
-actions/process.php
-controllers/db.php
-public/img
-public/img/giphy.webp
-public/js/script.js
-templates/create.php
-.gitignore
