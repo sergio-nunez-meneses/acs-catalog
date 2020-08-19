@@ -1,14 +1,35 @@
 <?php
 include "header.php";
 ?>
+
 <br>
 <body>
 
+<section id=menu>
+  <div class="container">
+      <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
+      <input id="toggle" type="checkbox">
 
+      <!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
+
+      <!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
+      <label class="toggle-container" for="toggle">
+          <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
+          <span class="button button-toggle"></span>
+      </label>
+
+      <!-- The nav menu -->
+      <nav class="nav">
+          <a class="nav-item" href=""><label for="login">User :</label><input type="text" name="user" id="user" value="" /></a>
+          <a class="nav-item" href=""><label for="password">Password :</label>
+          <input type="password" name="pass" id="pass" value="" />
+          <input type="submit" name="submit" value="connexion" /></a>
+      </nav>
+</div>
+</section>
 
 <h1>ACS News </h1>
 
-</div>
 <br>
 <!-- navbar -->
 <div class="mobile-container">
@@ -33,7 +54,7 @@ include "header.php";
 
 
 <!-- cards -->
-<div id="back">
+
 <div class="content-wrapper">
 
   <div class="news-card">
@@ -115,31 +136,6 @@ include "header.php";
   </div>
 
 </div>
-
-<!-- <button onclick="myFunction()">login</button>
-
-<div id="myDIV">
-  <p>
-      <label for="login">User :</label>
-      <input type="text" name="user" id="user" value="" />
-  </p>
-      <p>
-        <label for="password">Password :</label>
-        <input type="password" name="pass" id="pass" value="" />
-        <input type="submit" name="submit" value="connexion" />
-      </p>
-  </div>
-</div> -->
-
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (window.getComputedStyle(x).visibility === "hidden") {
-    x.style.visibility = "visible";
-  }
-}
-</script>
 
   </body>
 
