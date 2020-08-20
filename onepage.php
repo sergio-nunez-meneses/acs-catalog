@@ -14,6 +14,9 @@ include "header.php";
   <div id="navbar">
     <a href="index.php" class="active">Retour a l'index</a>
 
+      <a href="" class="active">Article prcedent</a>
+        <a href="" class="active">Article suivant</a>
+
     <div class="search-container">
     <form action="/action_page.php">
     <input type="text" placeholder="Search.." name="search">
