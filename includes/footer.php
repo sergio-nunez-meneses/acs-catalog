@@ -21,6 +21,7 @@
       <script src="<?php echo REL_PATH; ?>public/js/AJAX.js"></script>
       <script src="<?php echo REL_PATH; ?>public/js/login.js"></script>
       <script src="<?php echo REL_PATH; ?>public/js/index.js"></script>
+      <script src="<?php echo REL_PATH; ?>public/js/script.js"></script>
     <?php
     } elseif (basename($_SERVER['SCRIPT_NAME']) === 'article.php') {
       ?>
