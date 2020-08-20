@@ -19,7 +19,7 @@ class Database
       echo '<div style="display: flex; justify-content: center;"><p>error:' . $e . '!</p></div>';
     }
   }
-  // method declaration
+  //method declaration
   public function run_query($sql, $placeholders = []) {
     try {
       $stmt = $this->pdo->prepare($sql);

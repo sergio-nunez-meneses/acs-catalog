@@ -4,7 +4,7 @@ include "header.php";
 <br>
 <body>
 
-
+  
 
 <h1>ACS News </h1>
 
@@ -23,7 +23,7 @@ include "header.php";
     <a id="sport" class="btn">sport</a>
     <a id="culture" class="btn">culture</a>
     <div class="search-container">
-    <form action="/action_page.php">
+    <form action="search.php" method="post">
     <input type="text" placeholder="Search.." name="search">
     <button type="submit">Submit</button>
   </form>
@@ -145,4 +145,3 @@ function myFunction() {
   <?php
   include "footer.php";
   ?>
->>>>>>> e3521528afeb30775ec0d0fde8681b4bfb5a0a42
