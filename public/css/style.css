@@ -26,11 +26,40 @@ button{
   position: center;
 }
 
+.hidden {
+  display: none;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-around;
+}
+
 .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #053949;
+  width: 0%;
+}
+
+/* .header {
   background-color: #f1f1f1;
   padding: 15px;
   text-align: center;
-}
+} */
 
 #navbar {
   overflow: hidden;
@@ -209,6 +238,9 @@ button{
 }
 
 #footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
   padding: 3px 10px;
   background-color: #053949;
 }
