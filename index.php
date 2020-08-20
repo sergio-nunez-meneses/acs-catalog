@@ -10,6 +10,9 @@ include 'includes/header.php';
   </div>
 </section>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script>
+
 <!-- content -->
 <section>
   <div id="back" class="">
@@ -65,6 +68,5 @@ include 'includes/header.php';
   </form>
   <p id="displayErrors"></p>
 </section>
-
 
 <?php include 'includes/footer.php'; ?>

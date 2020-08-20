@@ -1,5 +1,10 @@
 <?php
 session_start();
+// $ip = $_SERVER['SERVER_ADDR'];
+// $_SESSION['ip'] = $ip;
+// echo $_SESSION['ip'];
+
+
 
 define('ABS_PATH', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 define('REL_PATH', DIRECTORY_SEPARATOR . basename(ABS_PATH) . DIRECTORY_SEPARATOR);
@@ -43,16 +48,20 @@ $user = new User();
         </div>
       </section>
 
+      <!-- check if user is logged -->
+      <section>
+        <div class="" style="display: flex;justify-content: center;">
+          <?php $user->is_logged(); ?>
+        </div>
+      <section>
+
       <!-- navbar -->
       <section>
         <div class="mobile-container">
           <div id="navbar">
             <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">Home</a>
             <a href="javascript:void(0)">News</a>
-            <!-- check if user is logged -->
-            <div class="" style="display: flex;justify-content: center;">
-              <?php $user->is_logged(); ?>
-            </div>
+
             <!-- search bar -->
             <div class="search-container">
               <form action="">
