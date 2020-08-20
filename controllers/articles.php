@@ -101,6 +101,8 @@ class Articles extends Database
             <p id="date-<?php echo $element_id; ?>" class="news-card__post-date">on <?php echo $formatted_date; ?></p>
             <p id="author-<?php echo $element_id; ?>" class="news-card__details-wrapper">by <?php echo $element['author_username'] ?></p>
             <p id="text-<?php echo $element_id; ?>"><?php echo $formatted_text; ?></p>
+            <a href="article.php?id=<?php echo $element_id - 1; ?>&element=<?php echo $_GET['element']; ?>">Precedent</a>
+            <a href="article.php?id=<?php echo $element_id + 1; ?>&element=<?php echo $_GET['element']; ?>">Next</a>
           </div>
         </div>
       </main>
