@@ -66,5 +66,4 @@ include 'includes/header.php';
   <p id="displayErrors"></p>
 </section>
 
-
 <?php include 'includes/footer.php'; ?>
