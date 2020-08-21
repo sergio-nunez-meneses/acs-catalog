@@ -71,7 +71,7 @@ $user = new User();
 
             <div class="col-4 text-center">
                   <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
-                    <img src="<?php echo REL_PATH . 'public/img/logo1.png' ?>" alt="logo">
+                    <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
                   </a>
                 </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
@@ -92,12 +92,12 @@ $user = new User();
           <div id="navbar">
             <div class="nav-scroller py-1 mb-2">
               <nav class="nav d-flex justify-content-between">
-                <a class="p-2" href="index.php">Home</a>
-                <a class="p-2" href="#">all_categories</a>
-                <a class="p-2" href="#">Culture</a>
-                <a class="p-2" href="#">sport</a>
-                <a class="p-2" href="#">economy</a>
-                <a class="p-2" href="#">politics</a>
+                <a href="<?php echo REL_PATH; ?>">Home</a>
+                <a id="all_categories" class="btn" href="#">all_categories</a>
+                <a id="economy" class="btn" href="#">Culture</a>
+                <a id="sport" class="btn" href="#">sport</a>
+                <a id="culture" class="btn" href="#">economy</a>
+                <a id="politics" class="btn" href="#">politics</a>
               </nav>
             </div>
           </div>
