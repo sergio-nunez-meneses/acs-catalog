@@ -40,7 +40,6 @@ $user = new User();
       </div>
     </section>
 
-<<<<<<< HEAD
         <div class="container">
         <header class="blog-header py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
@@ -49,16 +48,6 @@ $user = new User();
                 <button id="sign-in-tab" class="">sign up</button>
                 <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
                   <fieldset class="">
-=======
-    <div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <section class="sign-form-container" style="display: flex; flex-direction: column; align-items: center;">
-              <button id="sign-in-tab" class="">sign up</button>
-              <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
-                <fieldset class="">
->>>>>>> 5a9233e756f64c583c1401048ef025c83cf8e1a0
                   <legend>sign in</legend>
                   <input class="" type="text" name="username" value="" placeholder="username" required>
                   <input class="" type="password" name="password" value="" placeholder="password" required>
@@ -79,7 +68,6 @@ $user = new User();
             </section>
           </div>
 
-<<<<<<< HEAD
             <div class="col-4 text-center">
                   <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
                     <img src="<?php echo REL_PATH . 'public/img/logo1.png' ?>" alt="logo">
@@ -98,23 +86,6 @@ $user = new User();
      </div>
   </div>
         </header>
-=======
-          <div class="col-4 text-center">
-            <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
-              <img src="<?php echo REL_PATH . 'public/img/logo1.png' ?>" alt="logo">
-            </a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <div class="wrap">
-              <div class="search">
-                <input type="text" class="searchTerm" placeholder="Search">
-                <button type="submit" class="searchButton">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </header>
->>>>>>> 5a9233e756f64c583c1401048ef025c83cf8e1a0
 
           <!-- navbar -->
           <div id="navbar">
@@ -143,11 +114,7 @@ $user = new User();
             </div>
           </section>
 
-<<<<<<< HEAD
 
     </header>
-=======
-  </header>
->>>>>>> 5a9233e756f64c583c1401048ef025c83cf8e1a0
 
   <main>
