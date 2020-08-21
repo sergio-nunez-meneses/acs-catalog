@@ -10,11 +10,12 @@ include 'includes/header.php';
   </div>
 </section>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- social-bar -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script>
 
 <!-- content -->
 <section>
+  <!-- boutton article -->
   <div id="back" class="">
     <div class="content-wrapper">
       <div class="" style="display: flex; flex-direction: column; justify-content: space-around; align-content: center; align-items: center;">
@@ -25,8 +26,18 @@ include 'includes/header.php';
         }
         ?>
       </div>
-      <div id="recentArticles" class="">
-        <?php (new Articles())->display_all_elements('articles'); ?>
+
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+          </div>
+        </div>
+
+      <!-- affichage article -->
+      <div id="recentArticles" class="" style="display: flex; flex-wrap: wrap; justify-content: center;">
+         <?php (new Articles())->display_all_elements('articles'); ?>
       </div>
       <div id="allArticles" class="hidden">
         <?php (new Articles())->display_all_elements('all_articles'); ?>
@@ -46,27 +57,6 @@ include 'includes/header.php';
 </section>
 
 <!-- sign -->
-<section class="sign-form-container" style="display: flex; flex-direction: column; align-items: center;">
-  <button id="sign-in-tab" class="">sign up</button>
-  <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
-    <fieldset class="">
-    <legend>sign in</legend>
-    <input class="" type="text" name="username" value="" placeholder="username" required>
-    <input class="" type="password" name="password" value="" placeholder="password" required>
-    <input class="" type="submit" name="sign-in" value="sign in">
-    </fieldset>
-  </form>
-  <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
-    <fieldset class="">
-    <legend>sign up</legend>
-    <input class="" type="text" name="username" placeholder="username" required>
-    <input class="random-password" type="password" name="password" placeholder="password" required>
-    <input class="random-password" type="password" name="confirm-password" placeholder="confirm password" required>
-    <input id="generatorButton" type="button" value="generate password">
-    <input class="" type="submit" name="sign-up" value="sign up">
-    </fieldset>
-  </form>
-  <p id="displayErrors"></p>
-</section>
+
 
 <?php include 'includes/footer.php'; ?>
