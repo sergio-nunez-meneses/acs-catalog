@@ -86,6 +86,10 @@ class User extends Database
 
           header('Location:../index.php');
           ob_end_flush();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7606a02a7e3d02f3f5fa364431c295520ba47a89
         } else {
           $error_msg .= '<p>password incorrect</p>';
           header("Location:../index.php?error=yes&error_message=$error_msg");
