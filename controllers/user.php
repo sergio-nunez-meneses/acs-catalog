@@ -83,9 +83,13 @@ class User extends Database
         if (password_verify($password, $stored_password) && $error !== true) {
           $_SESSION['logged_in'] = true;
           $_SESSION['user'] = $username;
-
+          
           header('Location:../index.php');
           ob_end_flush();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a9233e756f64c583c1401048ef025c83cf8e1a0
         } else {
           $error_msg .= '<p>password incorrect</p>';
           header("Location:../index.php?error=yes&error_message=$error_msg");

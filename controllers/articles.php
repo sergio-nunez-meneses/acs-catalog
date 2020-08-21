@@ -4,10 +4,6 @@ require_once 'db.php';
 class Articles extends Database
 {
 
-  public function display_recent_article() {
-
-  }
-
   public function display_all_elements($element)
   {
     if ($element === 'articles') {
@@ -44,7 +40,7 @@ class Articles extends Database
             </h2>
             <p class="news-card__post-date"><?php echo $formatted_date; ?></p>
             <p class="element-author">by <?php echo $row[$author]; ?></p>
-            
+
           </header>
           <main class="news-card__details-wrapper">
             <p class="news-card__excerpt"><?php echo $shorten_text; ?>&hellip;</p>
