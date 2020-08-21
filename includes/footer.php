@@ -26,6 +26,7 @@
     } elseif (basename($_SERVER['SCRIPT_NAME']) === 'article.php') {
       ?>
       <script src="<?php echo REL_PATH; ?>public/js/AJAX.js"></script>
+      <script src="<?php echo REL_PATH; ?>public/js/copyLink.js"></script>
       <?php
     }
     ?>

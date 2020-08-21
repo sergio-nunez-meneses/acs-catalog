@@ -26,10 +26,6 @@ button{
   position: center;
 }
 
-.hidden {
-  display: none;
-}
-
 .user-info {
   display: flex;
   justify-content: space-around;
@@ -192,12 +188,12 @@ button{
 .news-card__post-date {
   font-size: .7rem;
   margin-bottom: .5rem;
-  color: #CCC;
+  color: #000;
 }
 
 .news-card__details-wrapper {
-  max-height: 0;
-  opacity: 0;
+  /* max-height: 0;
+  opacity: 0; */
   transition: max-height 1.5s ease, opacity 1s ease;
 }
 
@@ -252,21 +248,6 @@ button{
 li {
   text-align: center;
   width: 23rem;
-}
-
-.container {
-  position: relative;
-  max-width: 1200px; /* Maximum width */
-  margin: 0 auto; /* Center it */
-}
-
-.container .content {
-  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: white;
-  color: black; /* */
-  width: 100%; /* Full width */
-  padding: 10px; /* Some padding */
 }
 
 @media screen and (max-width: 600px) {

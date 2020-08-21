@@ -22,7 +22,7 @@ include 'includes/header.php';
         }
         ?>
       </div>
-      <div id="recentArticles" class="">
+      <div id="recentArticles" class="" style="display: flex; flex-wrap: wrap; justify-content: center;">
         <?php (new Articles())->display_all_elements('articles'); ?>
       </div>
       <div id="allArticles" class="hidden">
