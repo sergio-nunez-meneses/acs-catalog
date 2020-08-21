@@ -1,0 +1,32 @@
+// out: style.css, sourcemap: true, compress: true;
+// main: style.less;
+
+@import 'var.less';
+@import 'mixins.less';
+
+.hidden {
+  display: none;
+}
+
+// SINGLE ARTICLE
+.fa {
+  width: 25px;
+  border-radius: 50%;
+  font-size: 20px;
+  &:hover {
+    background-color: #152f4f;
+    transition: background-color 0.5s;
+  }
+}
+.fa-facebook {
+  .icons(@color: #3B5998);
+}
+.fa-twitter {
+  .icons(@color: #55ACEE);
+}
+.fa-linkedin {
+  .icons(@color: #007bb5);
+}
+.fa-instagram {
+  .icons(@color: #125688);
+}

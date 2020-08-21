@@ -58,10 +58,6 @@ button{
   color: white;
 }
 
-.hidden {
-  display: none;
-}
-
 .user-info {
   display: flex;
   justify-content: space-around;
@@ -162,12 +158,12 @@ button{
 .news-card__post-date {
   font-size: .7rem;
   margin-bottom: .5rem;
-  color: #CCC;
+  color: #000;
 }
 
 .news-card__details-wrapper {
-  max-height: 0;
-  opacity: 0;
+  /* max-height: 0;
+  opacity: 0; */
   transition: max-height 1.5s ease, opacity 1s ease;
 }
 
@@ -205,6 +201,42 @@ button{
 .news-card__read-more:hover i {
   left: 0.5rem;
   color: #26abff;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+  padding: 3px 10px;
+  background-color: #053949;
+}
+
+#footer a {
+  font-size: 30px;
+}
+
+li {
+  text-align: center;
+  width: 23rem;
+}
+
+@media screen and (max-width: 600px) {
+  #navbar .search-container {
+    float: none;
+  }
+
+  #navbar a, #navbar input[type=text], #navbar .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+
+  #navbar input[type=text] {
+    border: 1px solid #ccc;
+  }
 }
 
 @media (min-width: 900px) {

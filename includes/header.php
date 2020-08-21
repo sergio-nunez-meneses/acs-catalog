@@ -25,6 +25,7 @@ $user = new User();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo REL_PATH;?>public/css/normalize.css">
     <link rel="stylesheet" href="<?php echo REL_PATH;?>public/css/style.css">
+    <link rel="stylesheet" href="<?php echo REL_PATH;?>public/less/style.css">
     <script src="<?php echo REL_PATH;?>public/js/functionsDOM.js"></script>
     <title><?php echo $title; ?></title>
   </head>

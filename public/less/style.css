@@ -1,0 +1,28 @@
+.hidden {
+  display: none;
+}
+.fa {
+  width: 25px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.fa:hover {
+  background-color: #152f4f;
+  transition: background-color 0.5s;
+}
+.fa-facebook {
+  background-color: #3B5998;
+  color: #fff;
+}
+.fa-twitter {
+  background-color: #55ACEE;
+  color: #fff;
+}
+.fa-linkedin {
+  background-color: #007bb5;
+  color: #fff;
+}
+.fa-instagram {
+  background-color: #125688;
+  color: #fff;
+}
