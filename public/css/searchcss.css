@@ -1,0 +1,23 @@
+.img_wrapper{
+  overflow: hidden;
+}
+.search_img{
+  width: 100%;
+}
+.search_title{
+  font-size: 6vw;
+}
+.search_date{
+  font-size: 1.7vw;
+  text-align: right;
+}
+.article_text{
+  font-size: 2.5vw;
+}
+.pad{
+  padding: 1.4%;
+}
+.nopost_div{
+  width: 100%;
+  text-align: center;
+}

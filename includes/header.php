@@ -23,6 +23,7 @@ $user = new User();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo REL_PATH;?>public/css/normalize.css">
   <link rel="stylesheet" href="<?php echo REL_PATH;?>public/css/style.css">
+  <link rel="stylesheet" href="<?php echo REL_PATH;?>public/css/searchcss.css">
   <link rel="stylesheet" href="<?php echo REL_PATH;?>public/less/style.css">
   <script src="<?php echo REL_PATH;?>public/js/functionsDOM.js"></script>
   <title><?php echo $title; ?></title>
@@ -76,8 +77,8 @@ $user = new User();
             <div class="col-4 d-flex justify-content-end align-items-center">
               <div class="wrap">
      <div class="search">
-       <form class="" action="actions/search.php" method="post">
-         <input type="text" class="searchTerm" placeholder="Search">
+       <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="post">
+         <input type="text" class="searchTerm" placeholder="Search" name="Search">
          <button type="submit" class="searchButton">
            <i class="fa fa-search"></i>
         </button>
@@ -91,18 +92,12 @@ $user = new User();
           <div id="navbar">
             <div class="nav-scroller py-1 mb-2">
               <nav class="nav d-flex justify-content-between">
-                <a class="p-2" href="#">World</a>
-                <a class="p-2" href="#">U.S.</a>
-                <a class="p-2" href="#">Technology</a>
-                <a class="p-2" href="#">Design</a>
+                <a class="p-2" href="index.php">Home</a>
+                <a class="p-2" href="#">all_categories</a>
                 <a class="p-2" href="#">Culture</a>
-                <a class="p-2" href="#">Business</a>
-                <a class="p-2" href="#">Politics</a>
-                <a class="p-2" href="#">Opinion</a>
-                <a class="p-2" href="#">Science</a>
-                <a class="p-2" href="#">Health</a>
-                <a class="p-2" href="#">Style</a>
-                <a class="p-2" href="#">Travel</a>
+                <a class="p-2" href="#">sport</a>
+                <a class="p-2" href="#">economy</a>
+                <a class="p-2" href="#">politics</a>
               </nav>
             </div>
           </div>
