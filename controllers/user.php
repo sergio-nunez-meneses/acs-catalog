@@ -85,6 +85,7 @@ class User extends Database
           $_SESSION['user'] = $username;
 
           header('Location:../index.php');
+          ob_end_flush();
         } else {
           $error_msg .= '<p>password incorrect</p>';
           header("Location:../index.php?error=yes&error_message=$error_msg");

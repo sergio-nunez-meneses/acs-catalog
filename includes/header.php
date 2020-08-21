@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 // $ip = $_SERVER['SERVER_ADDR'];
 // $_SESSION['ip'] = $ip;
@@ -42,7 +43,7 @@ $user = new User();
         </div>
       </section>
 
-          <div class="container">
+        <div class="container">
         <header class="blog-header py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
@@ -78,10 +79,13 @@ $user = new User();
             <div class="col-4 d-flex justify-content-end align-items-center">
               <div class="wrap">
      <div class="search">
-        <input type="text" class="searchTerm" placeholder="Search">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-       </button>
+       <form class="" action="actions/search.php" method="post">
+         <input type="text" class="searchTerm" placeholder="Search">
+         <button type="submit" class="searchButton">
+           <i class="fa fa-search"></i>
+        </button>
+       </form>
+
      </div>
   </div>
         </header>
@@ -112,13 +116,6 @@ $user = new User();
               <?php $user->is_logged(); ?>
             </div>
           </section>
-
-          <!-- check if user is logged -->
-          <section>
-            <div class="" style="display: flex;justify-content: center;">
-              <?php $user->is_logged(); ?>
-            </div>
-          <section>
 
 
     </header>
