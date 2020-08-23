@@ -101,9 +101,9 @@ class Mail extends Database
         $to = 'To: ' . $subscriber['mail_registered'];
         mail($to, $subject, $message, $headers);
       }
-      echo 'Mail sucessfully sent';
+      // echo 'Mail sucessfully sent';
     } else {
-      echo 'Failed to send email';
+      // echo 'Failed to send email';
     }
   }
 }

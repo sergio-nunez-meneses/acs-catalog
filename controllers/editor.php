@@ -1,5 +1,6 @@
 <?php
 require_once 'db.php';
+require_once 'mail.php';
 
 class Editor extends Database
 {
@@ -162,10 +163,8 @@ class Editor extends Database
               'element_archived' => $element_archived,
               'author_id' => $author_id
             ]);
+            (new Mail())->inform_subscriber();
           }
-
-          ((new Mail))->inform_subscriber();
-          
           $action = $_POST['action'][0];
           $action_msg .= '<p>element created</p>';
         } elseif ($_POST['action'][0] === 'edit') {

@@ -12,15 +12,17 @@ function ajaxSuccess() {
 
   if (AJAX_RESPONSE['form'] === 'ajax-element-form') {
     if (AJAX_RESPONSE['action'] === 'edit') {
+      INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
       getId('title-' + AJAX_RESPONSE['id']).innerHTML = AJAX_RESPONSE['title'];
       getId('image-' + AJAX_RESPONSE['id']).setAttribute('src', AJAX_RESPONSE['image']);
       getId('date-' + AJAX_RESPONSE['id']).innerHTML = AJAX_RESPONSE['date'];
       getId('text-' + AJAX_RESPONSE['id']).innerHTML = AJAX_RESPONSE['text'];
-      INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
     } else if (AJAX_RESPONSE['action'] === 'delete') {
-      getId('element-' + AJAX_RESPONSE['id']).classList.add('hidden');
       INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
+      getId('element-' + AJAX_RESPONSE['id']).classList.add('hidden');
     } else if (AJAX_RESPONSE['action'] === 'create') {
+      INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
+
       let sec = document.createElement('SECTION'),
         btnImgTitleDiv = document.createElement('HEADER'),
         btn = document.createElement('BUTTON'),
@@ -54,8 +56,6 @@ function ajaxSuccess() {
       sec.appendChild(btnImgTitleDiv);
       sec.appendChild(text);
       getId('newArticleContainer').prepend(sec);
-
-      INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
 
       getId('handler-tab').addEventListener('click', displayAjaxForm);
     } else if (AJAX_RESPONSE['action'] === 'archive') {
