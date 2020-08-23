@@ -36,10 +36,10 @@ include 'includes/header.php';
         </div>
 
       <!-- affichage article -->
-      <div id="recentArticles" class="" style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div id="recentArticles" class="d-flex justify-content-center">
          <?php (new Articles())->display_all_elements('articles'); ?>
       </div>
-      <div id="allArticles" class="hidden">
+      <div id="allArticles" class="d-flex justify-content-center hidden">
         <?php (new Articles())->display_all_elements('all_articles'); ?>
       </div>
     </div>

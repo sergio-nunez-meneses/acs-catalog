@@ -4,11 +4,9 @@ include '../includes/header.php';
 
 $keyword = $_POST['Search'];
 
-if(!empty($keyword)){
-  $pdo = new Database;
-
-  $query_selection = "SELECT * FROM articles WHERE article_title LIKE '%$keyword%' OR article_text LIKE '%$keyword%' OR article_genre LIKE '%$keyword%'";
-  $articles = $pdo->run_query($query_selection)->fetchAll();
+if(!empty($keyword)) {
+  // article_genre column must be renamed to article_category and be placed before DATETIME column
+  $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE '%$keyword%' OR article_text LIKE '%$keyword%' OR article_genre LIKE '%$keyword%' OR DATETIME LIKE '%$keyword%'")->fetchAll();
 
   if(!empty($articles)) {
     foreach($articles as $article){

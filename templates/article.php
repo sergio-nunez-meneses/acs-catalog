@@ -50,12 +50,12 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
       <div class="p-4 mb-3 bg-info">
         <h4 class="font-italic">Newsletter</h4>
-        <form id="subscribe-id" action="../actions/subscribe.php">
+        <form id="subscribeForm" method="POST" action="../actions/subscribe.php">
           <div class="form-group d-flex flex-column">
-            <input type="email" class="form-control" placeholder="Enter your email" require>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" require>
           </div>
           <div class="form-group d-flex flex-column">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <button type="submit" class="btn btn-primary" name="subscribe">Subscribe</button>
           </div>
         </form>
       </div>

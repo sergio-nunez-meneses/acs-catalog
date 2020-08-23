@@ -9,6 +9,7 @@ require_once ABS_PATH . 'controllers/db.php';
 require_once ABS_PATH . 'controllers/user.php';
 require_once ABS_PATH . 'controllers/articles.php';
 require_once ABS_PATH . 'controllers/editor.php';
+require_once ABS_PATH . 'controllers/mail.php';
 
 $user = new User();
 ?>

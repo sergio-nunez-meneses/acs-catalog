@@ -163,6 +163,9 @@ class Editor extends Database
               'author_id' => $author_id
             ]);
           }
+
+          ((new Mail))->inform_subscriber();
+          
           $action = $_POST['action'][0];
           $action_msg .= '<p>element created</p>';
         } elseif ($_POST['action'][0] === 'edit') {
