@@ -81,9 +81,14 @@ $user = new User();
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <div class="wrap">
+<<<<<<< HEAD
                 <form class="form-inline" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+=======
+              <div class="">
+                <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="get">
+>>>>>>> e934438d6c5bed09c59c5aa7e0ee1215c848c1f2
                   <input type="text" class="searchTerm" placeholder="Search" name="search">
-                  <button type="submit" class="searchButton" name="">
+                  <button type="submit" class="searchButton" name="searchbtn">
                     <i class="fa fa-search"></i>
                   </button>
                 </form>
