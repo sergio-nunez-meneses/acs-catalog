@@ -92,7 +92,6 @@ $user = new User();
                     <i class="fa fa-search"></i>
                   </button>
                 </form>
->>>>>>> cd776a66e0c6abfd6e5975e7a83bf68cd7476a1b
             </div>
           </header>
 
