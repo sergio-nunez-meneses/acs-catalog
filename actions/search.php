@@ -20,9 +20,9 @@ if (!empty($keyword)) {
     echo "<div class='search_pad'>";
       echo "<div class='afterpad row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>";
 
-      echo "<div class='img_wrapper col-auto d-none d-lg-block'>";
+      echo "<div class='img_wrapper img-fluid col-auto d-none d-lg-block'>";
 
-          echo "<img src='".$article['article_image']."' class='search_img bd-placeholder-img'  width='250' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail'>";
+          echo "<img src='".$article['article_image']."' class='search_img img-fluid bd-placeholder-img'  width='300' height='auto' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail'>";
 
       echo "</div>";
 

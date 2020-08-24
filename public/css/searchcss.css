@@ -1,10 +1,12 @@
 
 .img_wrapper{
   background-color: #152f4f;
+  overflow: hidden;
 }
 .search_img{
   object-fit: contain;
-  flex-direction: column;
+  opacity: 0.7;
+  height: 100%;
 }
 .search_title{
   font-size: 3vw;
