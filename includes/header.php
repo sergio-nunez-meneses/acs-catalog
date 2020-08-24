@@ -42,33 +42,37 @@ $user = new User();
       </div>
     </section>
 
-        <div class="container">
+        <div class="container-fluid">
         <header class="blog-header py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
               <section class="sign-form-container d-flex flex-column align-items-center">
-                <button id="sign-in-tab" class="">sign up</button>
-                <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
+                <button id="showForms">Login</button>
+                <div id="maDIV" class="hidden">
+                  <button id="sign-in-tab" class="articlesbutton">sign up</button>
+                  <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
+                    <fieldset class="">
+                    <legend>sign in</legend>
+                    <input class="" type="text" name="username" value="" placeholder="username" required>
+                    <input class="" type="password" name="password" value="" placeholder="password" required>
+                    <input class="articlesbutton" type="submit" name="sign-in" value="sign in">
+                  </fieldset>
+                </form>
+                <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
                   <fieldset class="">
-                  <legend>sign in</legend>
-                  <input class="" type="text" name="username" value="" placeholder="username" required>
-                  <input class="" type="password" name="password" value="" placeholder="password" required>
-                  <input class="" type="submit" name="sign-in" value="sign in">
-                </fieldset>
-              </form>
-              <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
-                <fieldset class="">
-                  <legend>sign up</legend>
-                  <input class="" type="text" name="username" placeholder="username" required>
-                  <input class="random-password" type="password" name="password" placeholder="password" required>
-                  <input class="random-password" type="password" name="confirm-password" placeholder="confirm password" required>
-                  <input id="generatorButton" type="button" value="generate password">
-                  <input class="" type="submit" name="sign-up" value="sign up">
-                </fieldset>
-              </form>
-              <p id="displayErrors"></p>
+                    <legend>sign up</legend>
+                    <input class="" type="text" name="username" placeholder="username" required>
+                    <input class="random-password" type="password" name="password" placeholder="password" required>
+                    <input class="random-password" type="password" name="confirm-password" placeholder="confirm password" required>
+                    <input id="generatorButton" class="articlesbutton" type="button" value="generate password">
+                    <input class="articlesbutton" type="submit" name="sign-up" value="sign up">
+                  </fieldset>
+                </form>
+                <p id="displayErrors"></p>
+            </div>
             </section>
           </div>
+
 
           <div class="col-4 text-center">
             <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
@@ -83,6 +87,12 @@ $user = new User();
                   <i class="fa fa-search"></i>
                 </button>
               </form>
+                  <input type="text" class="searchTerm" placeholder="Search" name="search">
+                  <button type="submit" class="searchButton" name="searchbtn">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+>>>>>>> cd776a66e0c6abfd6e5975e7a83bf68cd7476a1b
             </div>
           </header>
 
@@ -91,7 +101,7 @@ $user = new User();
             <div class="nav-scroller py-1 mb-2">
               <nav class="nav d-flex justify-content-between">
                 <a href="<?php echo REL_PATH; ?>">Home</a>
-                <a id="all_categories" class="btn" href="#">all_categories</a>
+                <a id="all_categories" class="btn" href="#">all categories</a>
                 <a id="economy" class="btn" href="#">Culture</a>
                 <a id="sport" class="btn" href="#">sport</a>
                 <a id="culture" class="btn" href="#">economy</a>
@@ -106,8 +116,9 @@ $user = new User();
               <?php $user->is_logged(); ?>
             </div>
           </section>
-
-
-    </header>
+        </div>
+      </div>
+    </div>
+</header>
 
   <main>

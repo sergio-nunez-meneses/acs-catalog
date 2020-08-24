@@ -16,6 +16,76 @@ button{
   position: center;
 }
 
+#showForms {
+	background:linear-gradient(to bottom, #174275 5%, #061017 100%);
+	background-color:#174275;
+	border-radius:34px;
+	display:inline-block;
+	cursor:pointer;
+	color:#fafafa;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:18px 31px;
+	text-decoration:none;
+	text-shadow:0px -4px 0px #030d01;
+}
+#showForms:hover {
+	background:linear-gradient(to bottom, #061017 5%, #174275 100%);
+	background-color:#061017;
+}
+#showForms:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton {
+	background:linear-gradient(to bottom, #174275 5%, #061017 100%);
+	background-color:#174275;
+	border-radius:34px;
+	display:inline-block;
+	cursor:pointer;
+	color:#fafafa;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:18px 31px;
+	text-decoration:none;
+	text-shadow:0px -4px 0px #030d01;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #061017 5%, #174275 100%);
+	background-color:#061017;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.articlesbutton {
+  box-shadow:inset 0px 1px 0px 0px #0077ed;
+  	background-color:#145170;
+  	border-radius:7px;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:13px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #032957;
+  }
+}
+.articlesbutton:hover {
+	background-color:#1066a3;
+}
+.articlesbutton:active {
+	position:relative;
+	top:1px;
+}
+
 .searchTerm {
   height: 20px;
   border: 3px solid #152f4f;
@@ -45,6 +115,7 @@ button{
 #navbar {
   background-color: #152f4f;
   color: white;
+  border-radius:7px;
 }
 
 #navbar a {
@@ -57,13 +128,6 @@ button{
   align-content: center;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  background-color: #f1f1f1;
-}
 
 .progress-container {
   width: 100%;
@@ -210,8 +274,7 @@ button{
 }
 
 li {
-  text-align: center;
-  width: 23rem;
+ padding: 5px;
 }
 
 @media screen and (max-width: 600px) {
