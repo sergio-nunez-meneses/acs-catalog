@@ -9,7 +9,7 @@ if (!empty($keyword)) {
   // article_genre column must be renamed to article_category and be placed before DATETIME column
   $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_genre LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
 
-  $searchbtn = $_GET['searchbtn'];
+  $searchbtn = $_POST['search-btn'];
   $search = $_POST['search'];
   if(isset($searchbtn) && empty($search)){
     header("Location: ../index.php");
