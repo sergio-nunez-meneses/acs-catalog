@@ -2,7 +2,7 @@
 $title = 'search';
 include '../includes/header.php';
 
-$keyword = '%'.$_GET['search'].'%';
+$keyword = '%' . $_POST['search'] . '%';
 
 
 if (!empty($keyword)) {
@@ -10,7 +10,7 @@ if (!empty($keyword)) {
   $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_genre LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
 
   $searchbtn = $_GET['searchbtn'];
-  $search = $_GET['search'];
+  $search = $_POST['search'];
   if(isset($searchbtn) && empty($search)){
     header("Location: ../index.php");
   }
