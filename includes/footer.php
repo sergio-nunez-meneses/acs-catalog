@@ -4,16 +4,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-xs-12 about-company">
-        <img src="<?php echo REL_PATH . 'public/img/logo_classic.png' ?>" alt="logo">
+        <img src="https://i.ibb.co/PT4Kbxb/logo-classic.png" alt="logo">
         <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a><a href="#"><i class="fa fa-twitter-square"></i></a><a href="#"><i class="fa fa-youtube-square"></i></a></p>
       </div>
 
       <div class="col-lg-3 col-xs-12 links">
         <h4 class="mt-lg-0 mt-sm-3">Links</h4>
         <ul class="m-0 p-0">
-          <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Ismail</a></li>
-          <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Sergio</a></li>
-          <li><a href= "https://github.com/S-Thibault" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Sylvain</a></li>
+          <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="https://i.ibb.co/KsTFRHj/git.png" width="30" height="30" alt=""/>Ismail</a></li>
+          <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="https://i.ibb.co/KsTFRHj/git.png" width="30" height="30" alt=""/>Sergio</a></li>
+          <li><a href= "https://github.com/S-Thibault" target="_blank" title="Github"><img src="https://i.ibb.co/KsTFRHj/git.png" width="30" height="30" alt=""/>Sylvain</a></li>
           <li><a href="<?php echo REL_PATH; ?>templates/about.php">About</a></li>
         </ul>
       </div>
