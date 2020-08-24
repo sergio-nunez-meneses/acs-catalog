@@ -53,7 +53,7 @@
   <script src="<?php echo REL_PATH; ?>public/js/AJAX.js"></script>
   <script src="<?php echo REL_PATH; ?>public/js/login.js"></script>
   <script src="<?php echo REL_PATH; ?>public/js/index.js"></script>
-  <script src="<?php echo REL_PATH; ?>public/js/script.js"></script>
+  <script src="../public/js/script.js"></script>
   <?php
 } elseif (basename($_SERVER['SCRIPT_NAME']) === 'article.php') {
   ?>
@@ -61,7 +61,7 @@
   <script src="<?php echo REL_PATH; ?>public/js/copyLink.js"></script>
   <?php
 }
+echo REL_PATH;
 ?>
-
 </body>
 </html>

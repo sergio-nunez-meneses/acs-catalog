@@ -2,7 +2,7 @@
 $title = 'search';
 include '../includes/header.php';
 
-$keyword = $_POST['Search'];
+$keyword = $_GET['Search'];
 
 if(!empty($keyword)) {
   // article_genre column must be renamed to article_category and be placed before DATETIME column
