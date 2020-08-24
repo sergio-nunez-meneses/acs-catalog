@@ -10,8 +10,8 @@
 //
 //   getId('replaceText').innerHTML = result;
 // }
-//
-// REPLACE_BTN.addEventListener('click', replaceWord);
+
+REPLACE_BTN.addEventListener('click', replaceWord);
 
 const BTN = document.querySelectorAll(".btn");
 
