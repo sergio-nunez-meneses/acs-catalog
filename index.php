@@ -18,7 +18,7 @@ include 'includes/header.php';
   <!-- boutton article -->
   <div id="back" class="">
     <div class="content-wrapper">
-      <div class="" style="display: flex; flex-direction: column; justify-content: space-around; align-content: center; align-items: center;">
+      <div class="d-flex flex-column justify-content-around align-content-center align-items-center">
         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
           ?>
           <button id="articlesTab" class="">all articles</button>

@@ -77,14 +77,12 @@ $user = new User();
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <div class="wrap">
-              <div class="">
-                <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
-                  <input type="text" class="searchTerm" placeholder="Search" name="search">
-                  <button type="submit" class="searchButton" name="">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </form>
-              </div>
+              <form class="form-inline" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+                <input type="text" class="searchTerm" placeholder="Search" name="search">
+                <button type="submit" class="searchButton" name="">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
             </div>
           </header>
 
