@@ -78,7 +78,7 @@ $user = new User();
           <div class="col-4 d-flex justify-content-end align-items-center">
             <div class="wrap">
               <div class="">
-                <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+                <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="get">
                   <input type="text" class="searchTerm" placeholder="Search" name="search">
                   <button type="submit" class="searchButton" name="searchbtn">
                     <i class="fa fa-search"></i>

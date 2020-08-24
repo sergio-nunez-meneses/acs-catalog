@@ -2,15 +2,15 @@
 $title = 'search';
 include '../includes/header.php';
 
-$keyword = "%".$_POST['search']."%";
+$keyword = '%'.$_GET['search'].'%';
+
 
 if (!empty($keyword)) {
   // article_genre column must be renamed to article_category and be placed before DATETIME column
   $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_genre LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
 
-  $searchbtn = $_POST['searchbtn'];
-  $search = $_POST['search'];
-
+  $searchbtn = $_GET['searchbtn'];
+  $search = $_GET['search'];
   if(isset($searchbtn) && empty($search)){
     header("Location: ../index.php");
   }
@@ -18,11 +18,11 @@ if (!empty($keyword)) {
     foreach($articles as $article) {
 
     echo "<div class='search_pad'>";
-      echo "<div class='row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>";
+      echo "<div class='afterpad row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>";
 
-      echo "<div class='col-auto d-none d-lg-block'>";
+      echo "<div class='img_wrapper col-auto d-none d-lg-block'>";
 
-       echo "<img src='".$article['article_image']."' class='search_img bd-placeholder'-img width='250' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail'>";
+          echo "<img src='".$article['article_image']."' class='search_img bd-placeholder-img'  width='250' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail'>";
 
       echo "</div>";
 
@@ -44,8 +44,6 @@ if (!empty($keyword)) {
     echo "<p class='nopost'>no posts have been found!</p>";
     echo "</div>";
   }
-} else {
-  header("Location: ../index.php");
 }
 
 
