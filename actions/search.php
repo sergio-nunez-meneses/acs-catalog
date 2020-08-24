@@ -2,14 +2,14 @@
 $title = 'search';
 include '../includes/header.php';
 
-$keyword = $_POST['Search'];
+$keyword = '%' . $_POST['search'] . '%';
 
-if(!empty($keyword)) {
+if (!empty($keyword)) {
   // article_genre column must be renamed to article_category and be placed before DATETIME column
-  $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE '%$keyword%' OR article_text LIKE '%$keyword%' OR article_genre LIKE '%$keyword%' OR DATETIME LIKE '%$keyword%'")->fetchAll();
+  $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_genre LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
 
-  if(!empty($articles)) {
-    foreach($articles as $article){
+  if (!empty($articles)) {
+    foreach($articles as $article) {
       echo "<div class='content-wrapper'>";
       echo "<div class='news-card'>";
 
@@ -25,11 +25,11 @@ if(!empty($keyword)) {
       echo "</div>";
       echo "</div>";
     }
-  } else{
+  } else {
     echo "<div class='nopost_div'>";
     echo "<p class='nopost'>no posts have been found!</p>";
     echo "</div>";
   }
-} else{
+} else {
   header("Location: ../index.php");
 }
