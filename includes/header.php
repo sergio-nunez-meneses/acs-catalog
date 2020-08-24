@@ -80,7 +80,7 @@ $user = new User();
               <div class="">
                 <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
                   <input type="text" class="searchTerm" placeholder="Search" name="search">
-                  <button type="submit" class="searchButton" name="">
+                  <button type="submit" class="searchButton" name="searchbtn">
                     <i class="fa fa-search"></i>
                   </button>
                 </form>

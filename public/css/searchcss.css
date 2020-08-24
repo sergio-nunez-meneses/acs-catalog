@@ -1,11 +1,9 @@
-.img_wrapper{
+
+.search_img{
   overflow: hidden;
 }
-.search_img{
-  width: 100%;
-}
 .search_title{
-  font-size: 6vw;
+  font-size: 3vw;
 }
 .search_date{
   font-size: 1.7vw;
@@ -14,10 +12,16 @@
 .article_text{
   font-size: 2.5vw;
 }
-.pad{
-  padding: 1.4%;
+.search_pad{
+  padding-top: 0.3%;
+  padding-bottom: 0.3%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 .nopost_div{
   width: 100%;
   text-align: center;
+}
+.search_genre{
+  font-size: 1vw;
 }

@@ -98,4 +98,5 @@ for (let i = 0; i < BTN.length; i++) {
     }
   })
 }
+
 console.log("kkk");
