@@ -21,7 +21,7 @@ include 'includes/header.php';
       <div class="" style="display: flex; flex-direction: column; justify-content: space-around; align-content: center; align-items: center;">
         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
           ?>
-          <button id="articlesTab" class="">all articles</button>
+          <button id="articlesTab" class="articlesbutton">all articles</button>
           <?php
         }
         ?>
@@ -36,14 +36,18 @@ include 'includes/header.php';
         </div>
 
       <!-- affichage article -->
-      <div id="recentArticles" class="d-flex justify-content-center">
-         <?php (new Articles())->display_all_elements('articles'); ?>
-      </div>
-      <div id="allArticles" class="d-flex justify-content-center hidden">
-        <?php (new Articles())->display_all_elements('all_articles'); ?>
-      </div>
-    </div>
-  </div>
+              <div id="recentArticles" class="col-md-offset-3 col-md-3">
+                 <?php (new Articles())->display_all_elements('articles'); ?>
+              </div>
+              <div id="recentArticles" class="col-md-3">
+                 <?php (new Articles())->display_all_elements('articles'); ?>
+              </div>
+              <div id="allArticles" class="col-md-3 hidden">
+                <?php (new Articles())->display_all_elements('all_articles'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
 </section>
 
 <!-- create article -->

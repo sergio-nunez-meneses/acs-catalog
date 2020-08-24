@@ -2,7 +2,10 @@
 $title = 'About';
 include '../includes/header.php'; ?>
 
-<h1>About</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>About</h1>
 
 <p>
 Ce site est un projet que nous menons pour l'acces code school de Nevers
@@ -14,10 +17,10 @@ Ce site est un projet que nous menons pour l'acces code school de Nevers
 <br>
 <a href="href= "https://github.com/S-Thibault" target="_blank" title="Github">Sylvain</a"></a></p>
 <br>
-<p>
-et sur Linkedin
-</p>
 
+    </div>
+  </div>
+</div>
 
 
 <?php include '../includes/footer.php'; ?>

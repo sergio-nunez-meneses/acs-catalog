@@ -14,14 +14,13 @@
           <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Ismail</a></li>
           <li><a href= "https://github.com/cyla00" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Sergio</a></li>
           <li><a href= "https://github.com/S-Thibault" target="_blank" title="Github"><img src="<?php echo REL_PATH; ?>public/img/git.png" width="30" height="30" alt=""/>Sylvain</a></li>
-          <li><a href="<?php echo REL_PATH; ?>templates/about.php">about</a></li>
+          <li><a href="<?php echo REL_PATH; ?>templates/about.php">About</a></li>
         </ul>
       </div>
       <div class="col-lg-4 col-xs-12 location">
         <h4 class="mt-lg-0 mt-sm-4">Newsletter</h4>
         <p><span class="wpcf7-form-control-wrap EMAIL"><input type="email" name="EMAIL" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email" /></span></p>
 
-        <div class="search-container">
           <div class="call-to-action my-4">
             <ul class="list-unstyled list-inline">
               <li class="list-inline-item">
@@ -30,10 +29,9 @@
               <li class="list-inline-item"><a href="" class="btn btn-primary">Sign up!</a></li>
             </ul>
           </div>
-
         </div>
       </div>
-    </div>
+
     <div class="row mt-5">
       <div class="col copyright">
         <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>

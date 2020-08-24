@@ -1,4 +1,5 @@
-const SIGN_TAB = getId('sign-in-tab'),
+const FORMS_BTN = getId('showForms'),
+  SIGN_TAB = getId('sign-in-tab'),
   SIGN_IN_FORM = getId('sign-in-form'),
   SIGN_UP_FORM = getId('sign-up-form'),
   CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=`~,<>.[]:|',
@@ -12,6 +13,15 @@ function randPassGen() {
   let shuffleChars = CHARS.split('').sort(function() { return 0.5 - Math.random() }).join('');
 
   return shuffleChars.substring(0, (CHARS.length / 4));
+}
+
+function displayDiv() {
+  var div = document.getElementById("maDIV");
+  if (div.classList.contains('hidden')) {
+    div.classList.remove('hidden');
+  } else {
+    div.classList.add('hidden');
+  }
 }
 
 function displayForms() {
@@ -102,6 +112,7 @@ function signInValidation() {
   }
 }
 
+FORMS_BTN.addEventListener('click', displayDiv);
 SIGN_TAB.addEventListener('click', displayForms);
 GEN_BTN.addEventListener('click', () => {
   let genPass = randPassGen();
