@@ -82,7 +82,7 @@ class Articles extends Database
             <h2 id="title-<?php echo $element_id; ?>" class=""><?php echo $element[$title]; ?></h2>
             <p id="author-<?php echo $element_id; ?>" class="">By <?php echo $author_name['author_username']; ?></p>
           </div>
-          <img id="image-<?php echo $element_id; ?>" src="<?php echo '../public/img/' . $element[$image]; ?>" alt="" class="img-fluid">
+          <img id="image-<?php echo $element_id; ?>" src="<?php echo '../public/img/' . $element[$image]; ?>" alt="" class="article-image img-fluid ">
           <div class="row">
             <!-- add base_url function -->
             <input id="articleLink" type="hidden" name="" value="http://snunezmeneses/acs-catalog/templates/article.php?id=<?php echo $element_id; ?>&element=<?php echo $_GET['element']; ?>">
