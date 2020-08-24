@@ -47,6 +47,8 @@ if (!empty($keyword)) {
 }
 
 
+include '../includes/footer.php';
+
 
 // <img src='".$article['article_image']."' width='100'>
 
