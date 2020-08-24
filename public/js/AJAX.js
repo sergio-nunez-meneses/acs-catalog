@@ -3,6 +3,7 @@ const CREATE_TAB = getId('createTab'),
   EDITOR_CONTAINER = getId('editorContainer'),
   ARTICLE_CONTAINER = getId('articleContainer'),
   EDITOR_TAB = getId('handler-tab'),
+  CLOSE_TAB = getId('closeEditor'),
   INFO_TEXT = getId('ajaxResponse');
 
 function ajaxSuccess() {
@@ -99,5 +100,12 @@ function displayEditor() {
   }
 }
 
+function closeModal() {
+  EDITOR_CONTAINER.classList.add('hidden');
+  ARTICLE_CONTAINER.classList.remove('hidden');
+  EDITOR_TAB.innerHTML = 'edit';
+}
+
 if (CREATE_TAB !== null) CREATE_TAB.addEventListener('click', displayEditor);
 if (EDITOR_TAB !== null) EDITOR_TAB.addEventListener('click', displayAjaxForm);
+if (CLOSE_TAB !== null) CLOSE_TAB.addEventListener('click', closeModal);
