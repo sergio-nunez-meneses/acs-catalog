@@ -46,7 +46,7 @@ $user = new User();
         <header class="blog-header py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-              <section class="sign-form-container" style="display: flex; flex-direction: column; align-items: center;">
+              <section class="sign-form-container d-flex flex-column align-items-center">
                 <button id="sign-in-tab" class="">sign up</button>
                 <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
                   <fieldset class="">
@@ -70,24 +70,23 @@ $user = new User();
             </section>
           </div>
 
-            <div class="col-4 text-center">
-                  <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
-                    <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
-                  </a>
-                </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-              <div class="wrap">
-     <div class="search">
-       <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="get">
-         <input type="text" class="searchTerm" placeholder="Search" name="Search">
-         <button type="submit" class="searchButton">
-           <i class="fa fa-search"></i>
-        </button>
-       </form>
-
-     </div>
-  </div>
-        </header>
+          <div class="col-4 text-center">
+            <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
+              <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
+            </a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <div class="wrap">
+              <div class="">
+                <form class="" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+                  <input type="text" class="searchTerm" placeholder="Search" name="search">
+                  <button type="submit" class="searchButton" name="">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </header>
 
           <!-- navbar -->
           <div id="navbar">
