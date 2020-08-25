@@ -18,16 +18,16 @@
         </ul>
       </div>
       <div class="col-lg-4 col-xs-12 location">
-        <h4 class="mt-lg-0 mt-sm-4">Newsletter</h4>
-        <p><span class="wpcf7-form-control-wrap EMAIL"><input type="email" name="EMAIL" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your Email" /></span></p>
-
+        <h4 class="mt-lg-0 mt-sm-4">Join our newsletter</h4>
           <div class="call-to-action my-4">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item">
-                <h5>Register for free</h5>
-              </li>
-              <li class="list-inline-item"><a href="" class="btn btn-primary">Sign up!</a></li>
-            </ul>
+            <form id="subscribeForm" method="POST" action="<?php echo REL_PATH; ?>actions/subscribe.php">
+              <div class="form-group d-flex flex-column">
+                <input type="email" class="form-control" name="email" placeholder="Enter your email" require>
+              </div>
+              <div class="form-group d-flex flex-column">
+                <button type="submit" class="btn btn-primary" name="subscribe">Subscribe</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
