@@ -19,9 +19,9 @@ include '../includes/header.php';
         <a id="closeTop" href="javascript:void(0)" class="close-btn d-block position-absolute text-decoration-none">&times;</a>
         <div class="side-form-content w-100 position-relative text-center">
           <?php (new Editor())->content_editor(); ?>
-        </div>
-        <div class="d-flex justify-content-center">
-          <p id="ajaxResponse" class="lead text-danger"></p>
+          <div class="d-flex justify-content-center">
+            <p id="ajaxResponse" class="lead text-danger text-center"></p>
+          </div>
         </div>
       </div>
     </div>
