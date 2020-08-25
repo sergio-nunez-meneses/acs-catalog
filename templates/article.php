@@ -2,7 +2,7 @@
 $title = 'article ' . $_GET['id'];
 include '../includes/header.php';
 ?>
-<div class="container">
+<div id="<?php echo 'element-' . $_GET['id']; ?>" class="container">
   <div class="row">
     <div class="col-md-12">
       <div id="articleContainer">

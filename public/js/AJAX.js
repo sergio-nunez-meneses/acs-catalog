@@ -34,7 +34,7 @@ function ajaxSuccess() {
 
       let sec = document.createElement('SECTION'),
         btnImgTitleDiv = document.createElement('HEADER'),
-        btn = document.createElement('BUTTON'),
+        // btn = document.createElement('BUTTON'),
         image = document.createElement('IMG'),
         title = document.createElement('H2'),
         dateAuthorDiv = document.createElement('DIV'),
@@ -43,12 +43,12 @@ function ajaxSuccess() {
         text = document.createElement('ARTICLE');
 
       sec.setAttribute('id', 'container-' + AJAX_RESPONSE['id']);
-      btn.setAttribute('id', 'handler-tab');
-      btn.innerHTML = 'edit';
+      // btn.setAttribute('id', 'handler-tab');
+      // btn.innerHTML = 'edit';
       title.setAttribute('id', 'title-' + AJAX_RESPONSE['id']);
       title.innerHTML = AJAX_RESPONSE['title'];
       image.setAttribute('id', 'image-' + AJAX_RESPONSE['id']);
-      image.setAttribute('src', '../img/' + AJAX_RESPONSE['image']);
+      image.setAttribute('src', 'acs-catalog/public/img/' + AJAX_RESPONSE['image']);
       date.setAttribute('id', 'date-' + AJAX_RESPONSE['id']);
       date.innerHTML = AJAX_RESPONSE['date'];
       author.setAttribute('id', 'author-' + AJAX_RESPONSE['id']);
@@ -58,7 +58,7 @@ function ajaxSuccess() {
 
       dateAuthorDiv.appendChild(date);
       dateAuthorDiv.appendChild(author);
-      btnImgTitleDiv.appendChild(btn);
+      // btnImgTitleDiv.appendChild(btn);
       btnImgTitleDiv.appendChild(title);
       btnImgTitleDiv.appendChild(image);
       btnImgTitleDiv.appendChild(dateAuthorDiv);
@@ -66,7 +66,7 @@ function ajaxSuccess() {
       sec.appendChild(text);
       getId('newArticleContainer').prepend(sec);
 
-      getId('handler-tab').addEventListener('click', displayAjaxForm);
+      // getId('handler-tab').addEventListener('click', displayAjaxForm);
     } else if (AJAX_RESPONSE['action'] === 'archive') {
       INFO_TEXT.innerHTML = AJAX_RESPONSE['action_message'];
     }

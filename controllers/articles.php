@@ -73,10 +73,10 @@ class Articles extends Database
       <article class="">
         <header>
           <div class="row flex-column pt-3">
-                <h2 id="title-<?php echo $element_id; ?>" class="text-capitalize font-weight-bolder"><?php echo $element[$title]; ?></h2>
+            <h2 id="title-<?php echo $element_id; ?>" class="text-capitalize font-weight-bolder"><?php echo $element[$title]; ?></h2>
             <hr class="horizontal-line bg-info">
-                <p id="date-<?php echo $element_id; ?>" class="">On <?php echo $formatted_date; ?></p>
-                <p id="author-<?php echo $element_id; ?>" class="text-capitalize font-italic">By <?php echo $author_name['author_username']; ?></p>
+            <p id="date-<?php echo $element_id; ?>" class="">On <?php echo $formatted_date; ?></p>
+            <p id="author-<?php echo $element_id; ?>" class="text-capitalize font-italic">By <?php echo $author_name['author_username']; ?></p>
           </div>
           <img id="image-<?php echo $element_id; ?>" src="<?php echo '../public/img/' . $element[$image]; ?>" alt="" class="article-image img-fluid ">
           <div class="row">

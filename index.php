@@ -13,7 +13,7 @@ include 'includes/header.php';
   </section>
 
   <!-- SOCIAL SIDEBAR -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script>
+  <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script> -->
 
   <!-- 'À LA UNE' -->
   <section>
@@ -36,7 +36,7 @@ include 'includes/header.php';
 
   <!-- DISPLAY CREATED ARTICLE -->
   <section>
-    <div id="createContainer" class="hidden">
+    <div id="createContainer" class="">
       <div id="newArticleContainer" class="">
       </div>
     </div>
