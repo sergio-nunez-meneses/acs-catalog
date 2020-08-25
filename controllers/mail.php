@@ -55,6 +55,7 @@ class Mail extends Database
           //   'error' => ''
           // ];
           // echo json_encode($array);
+          header('Location:../index.php');
         } else {
           $info .= 'failed to send email!';
           echo $info;
