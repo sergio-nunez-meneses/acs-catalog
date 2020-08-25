@@ -14,18 +14,22 @@ include 'includes/header.php';
   <!-- social-bar -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script>
 
-  <!-- content -->
+  <!-- 'à la une' -->
   <section>
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <?php echo (new Articles())->display_last_article(); ?>
     </div>
+  </section>
 
-    <!-- affichage article -->
-    <div id="recentArticles" class="">
-       <?php (new Articles())->display_all_articles('articles'); ?>
-    </div>
-    <div id="allArticles" class="col-md-3 hidden">
-      <?php (new Articles())->display_all_articles('all_articles'); ?>
+  <!-- display articles -->
+  <section>
+    <div class="container">
+      <div id="recentArticles" class="row justify-content-center">
+         <?php (new Articles())->display_all_articles('articles'); ?>
+      </div>
+      <div id="allArticles" class="row justify-content-center hidden">
+        <?php (new Articles())->display_all_articles('all_articles'); ?>
+      </div>
     </div>
   </section>
 

@@ -7,6 +7,14 @@
 body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+.progress-container {
+  height: 6px;
+  background: #ccc;
+}
+.progress-container .progress-bar {
+  height: 6px;
+  width: 0%;
+}
 .hidden {
   display: none !important;
 }
@@ -70,30 +78,11 @@ body {
 .top-form a:focus {
   color: #f1f1f1;
 }
+.card-img-top {
+  height: 200px !important;
+}
 .article-image {
   width: 1140px !important;
-}
-#showForms {
-  background: linear-gradient(to bottom, #174275 5%, #061017 100%);
-  background-color: #174275;
-  border-radius: 34px;
-  display: inline-block;
-  cursor: pointer;
-  color: #fafafa;
-  font-family: Arial;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 18px 31px;
-  text-decoration: none;
-  text-shadow: 0px -4px 0px #030d01;
-}
-#showForms:hover {
-  background: linear-gradient(to bottom, #061017 5%, #174275 100%);
-  background-color: #061017;
-}
-#showForms:active {
-  position: relative;
-  top: 1px;
 }
 .fa {
   width: 25px;

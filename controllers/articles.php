@@ -7,7 +7,7 @@ class Articles extends Database
   public function display_all_articles($element)
   {
     if ($element === 'articles') {
-      $data = $this->run_query('SELECT * FROM articles WHERE article_archived = 0 ORDER BY article_id DESC LIMIT 10');
+      $data = $this->run_query('SELECT * FROM articles WHERE article_archived = 0 ORDER BY article_id DESC LIMIT 6');
     } elseif ($element === 'all_articles') {
       $data = $this->run_query('SELECT * FROM articles ORDER BY article_id DESC LIMIT 6');
       $element = 'articles';
@@ -27,29 +27,24 @@ class Articles extends Database
       $shorten_text = $row[$text];
       $shorten_text = substr($row[$text], 0, 80);
       ?>
-
-      <article class="news-card">
-        <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__card-link"></a>
-        <img src="<?php echo 'public/img/' . $row[$image] ?>" alt="" class="news-card__image">
-        <div class="news-card__text-wrapper">
-          <header>
-            <h2 class="news-card__title">
-              <a class="element-title" href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
+      <div class="col-lg-4 p-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">
+              <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
                 <?php echo $row[$title]; ?>
               </a>
-            </h2>
-            <p class="news-card__post-date"><?php echo $formatted_date; ?></p>
-            <p class="element-author">by <?php echo $row[$author]; ?></p>
-          </header>
-          <main class="news-card__details-wrapper">
-            <p class="news-card__excerpt"><?php echo $shorten_text; ?>&hellip;</p>
-            <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__read-more">
-              Read more
-              <i class="fas fa-long-arrow-alt-right"></i>
+            </h5>
+            <p class="card-text text-dark text-muted"><?php echo $formatted_date; ?></p>
+            <p class="card-text text-dark font-italic text-capitalize">by <?php echo $row[$author]; ?></p>
+            <p class="card-text text-dark"><?php echo $shorten_text; ?>&hellip;</p>
+            <a class="card-text text-dark" href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
+              <button type="button" class="btn bg-dark text-white">Read more</button>
             </a>
-          </main>
+          </div>
+          <img src="public/img/<?php echo $row[$image]; ?>" class="card-img-top" alt="...">
         </div>
-      </article>
+      </div>
     <?php
     }
   }

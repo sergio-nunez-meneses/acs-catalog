@@ -32,13 +32,13 @@ include '../includes/header.php';
         <p class="mb-0">ACS News is a non profit organization with one and only aim: tell you the truth.</p>
         <div class="d-flex justify-content-around pt-4">
           <div class="">
-            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
           </div>
           <div class="">
-            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-twitter mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+            <a href="https://twitter.com/intent/tweet?text=<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-twitter mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
           </div>
           <div class="">
-            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-linkedin mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-linkedin mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
           </div>
           <div class="">
             <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-instagram mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>

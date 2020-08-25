@@ -37,8 +37,8 @@ $user = new User();
     <?php if (basename($_SERVER['SCRIPT_NAME']) === 'article.php') { ?>
       <section>
         <div class="header">
-          <div class="progress-container">
-            <div id="progressBar" class="progress-bar"></div>
+          <div class="progress-container w-100 position-fixed">
+            <div id="progressBar" class="progress-bar w-0 bg-primary"></div>
           </div>
         </div>
       </section>
