@@ -1,4 +1,3 @@
-// const FORMS_BTN = getId('showForms'),
 const OPEN_SIDE = getId('openSide'),
   CLOSE_SIDE = getId('closeSide'),
   SIGN_TAB = getId('sign-in-tab'),
@@ -113,7 +112,6 @@ function signInValidation() {
   }
 }
 
-// FORMS_BTN.addEventListener('click', displayDiv);
 OPEN_SIDE.addEventListener('click', openSideForm);
 CLOSE_SIDE.addEventListener('click', closeSideForm);
 SIGN_TAB.addEventListener('click', displayForms);

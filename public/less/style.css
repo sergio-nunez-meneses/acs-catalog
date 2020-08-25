@@ -9,6 +9,9 @@ body {
   margin: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+.hidden {
+  display: none !important;
+}
 .progress-container {
   height: 6px;
   background: #ccc;
@@ -18,14 +21,21 @@ body {
   height: 6px;
   width: 0%;
 }
+.default-navbar a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+a:hover {
+  color: #ccc !important;
+  text-decoration: underline !important;
+  transition: 0.3s ease;
+}
 .navi {
   background-color: #b9cbc0;
 }
 .bg-color {
   background-color: #b9cbc0;
-}
-.hidden {
-  display: none !important;
 }
 .side-form {
   width: 0;
@@ -87,7 +97,49 @@ body {
 .top-form a:focus {
   color: #f1f1f1;
 }
-.card-img-top {
+.jumbo {
+  display: inline-block;
+  width: 1080px;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+.jumbo:hover .jumbo-img {
+  transform: scale(1.25);
+  transition: transform 0.3s ease;
+}
+.jumbo .jumbo-img {
+  height: inherit;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+.jumbo .jumbo-box {
+  width: 100%;
+  height: inherit;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.jumbo h1,
+.jumbo p,
+.jumbo a {
+  color: #ddd !important;
+}
+.card-container {
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+.card-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.card-container .card-img-bottom {
   height: 200px !important;
 }
 .article-image {

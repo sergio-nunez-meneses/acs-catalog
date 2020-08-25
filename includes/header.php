@@ -130,17 +130,17 @@ $user = new User();
       </div>
     </section>
 
+    <!-- NAVBAR -->
     <section class="container-fluid">
-      <!-- NAVBAR -->
       <div id="navbar" class="rounded">
-        <div class="nav-scroller p-3">
-          <nav class="nav d-flex justify-content-between">
-            <a class="btn btn-lg text-white" href="<?php echo REL_PATH; ?>">Home</a>
-            <a id="all_categories" class="btn btn-lg text-white" href="javascript:void(0)">All</a>
-            <a id="economy" class="btn btn-lg text-white" href="javascript:void(0)">Culture</a>
-            <a id="sport" class="btn btn-lg text-white" href="javascript:void(0)">Sports</a>
-            <a id="culture" class="btn btn-lg text-white" href="javascript:void(0)">Economy</a>
-            <a id="politics" class="btn btn-lg text-white" href="javascript:void(0)">Politics</a>
+        <div class="p-3">
+          <nav class="default-navbar nav d-flex justify-content-between">
+            <a class="btn btn-lg" href="<?php echo REL_PATH; ?>">Home</a>
+            <a id="all_categories" class="btn btn-lg" href="javascript:void(0)">All</a>
+            <a id="economy" class="btn btn-lg" href="javascript:void(0)">Culture</a>
+            <a id="sport" class="btn btn-lg" href="javascript:void(0)">Sports</a>
+            <a id="culture" class="btn btn-lg" href="javascript:void(0)">Economy</a>
+            <a id="politics" class="btn btn-lg" href="javascript:void(0)">Politics</a>
           </nav>
         </div>
       </div>

@@ -28,7 +28,7 @@ class Articles extends Database
       $shorten_text = substr($row[$text], 0, 80);
       ?>
       <div class="col-lg-4 p-3">
-        <div class="card">
+        <div class="card-container card bg-light">
           <div class="card-body">
             <h5 class="card-title font-weight-bold">
               <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>">
@@ -42,7 +42,7 @@ class Articles extends Database
               <button type="button" class="btn bg-dark text-white">Read more</button>
             </a>
           </div>
-          <img src="public/img/<?php echo $row[$image]; ?>" class="card-img-top" alt="...">
+          <img src="public/img/<?php echo $row[$image]; ?>" class="card-img-bottom card-img-top" alt="">
         </div>
       </div>
     <?php
@@ -152,19 +152,22 @@ class Articles extends Database
     $article = $stmt->fetch();
 
     $shorten_text = $article['article_text'];
-    $shorten_text = substr($article['article_text'], 0, 80);
+    $shorten_text = substr($article['article_text'], 0, 200);
     ?>
 
-    <div class="jumbotron my-2 p-4 p-md-5 text-dark rounded" style="background-image: url(<?php echo '\'' . 'public/img/' . $article['article_image'] . '\''; ?>);">
-      <div class="col-md-12 px-0">
-        <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
-        <p class="lead my-3"><?php echo $shorten_text; ?></p>
-        <p class="lead mb-0">
-          <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="text-dark font-weight-bold">
-            Continue reading...
-          </a>
-        </p>
-      </div>
+    <div class="jumbo jumbotron mw-100 my-2 rounded">
+      <a class="text-decoration-none" href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>">
+        <img class="jumbo-img w-100" src="public/img/<?php echo $article['article_image']; ?>" alt="">
+        <div class="jumbo-box col-md-12 p-3">
+          <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
+          <p class="lead my-3"><?php echo $shorten_text; ?>...</p>
+          <p class="lead mb-0">
+            <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="font-weight-bold">
+              <button type="button" class="btn btn-lg bg-dark text-white" name="button">Continue reading...</button>
+            </a>
+          </p>
+        </div>
+      </a>
     </div>
 
     <?php

@@ -11,9 +11,6 @@ if (empty($keyword)) {
   $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
   // OR article_category LIKE :keyword
 
-  // $searchbtn = $_POST['search-btn'];
-  // $search = $_POST['search'];
-
   if (!empty($articles)) {
     foreach($articles as $article) {
       ?>

@@ -17,6 +17,11 @@ body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
+// PROGRESS BAR
 .progress-container {
   height: 6px;
   background: #ccc;
@@ -27,37 +32,84 @@ body {
   }
 }
 
+// CLIENT NAVBAR
+.default-navbar a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: 0.4s ease;
+  }
+  & a:hover {
+  color: #ccc !important;
+  text-decoration: underline !important;
+  transition: 0.3s ease;
+}
+
 .navi {
   background-color: #b9cbc0;
 }
-
 .bg-color {
   background-color: #b9cbc0;
 }
 
-.hidden {
-  display: none !important;
-}
-
+// FORMS
 .side-form {
   .overlay(@width: 0, @height: 100%);
   overflow-x: scroll;
 }
-
 .top-form {
   .overlay(@width: 100%, @height: 0);
   overflow-y: scroll;
 }
 
-.card-img-top {
-  height: 200px !important;
+// INDEX ARTICLES
+.jumbo {
+  display: inline-block;
+  width: 1080px;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  &:hover .jumbo-img {
+    transform: scale(1.25);
+    transition: transform 0.3s ease;
+  }
+  & .jumbo-img {
+    height: inherit;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+  }
+  & .jumbo-box {
+    width: 100%;
+    height: inherit;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  & h1, p, a {
+    color: #ddd !important;
+  }
 }
-
-.article-image {
-  width: 1140px !important;
+.card-container {
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+  &:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  }
+  & .card-img-bottom {
+    height: 200px !important;
+  }
 }
 
 // SINGLE ARTICLE
+.article-image {
+  width: 1140px !important;
+}
 .fa {
   width: 25px;
   border-radius: 50%;
