@@ -64,7 +64,7 @@ class Editor extends Database
             <input id="elementAuthor" class="form-control form-control-lg" type="number" name="author[]" value="<?php echo $author['author_id']; ?>" placeholder="author: <?php echo $author['author_username']; ?>">
           </div>
           <div class="form-group">
-            <input type="hidden" name="images[]" value="<?php echo $element[$image]; ?>">
+            <input type="hidden" name="stored_image" value="<?php echo $element[$image]; ?>">
           </div>
           <div class="form-group">
             <input id="elementImage" class="form-control form-control-lg" type="file" multiple name="images[]" value="<?php echo $element[$image]; ?>">
@@ -115,6 +115,9 @@ class Editor extends Database
             </div>
             <div class="form-group">
               <input class="form-control form-control-lg" type="number" name="author" value="<?php echo $author['author_id']; ?>" placeholder="author:">
+            </div>
+            <div class="form-group">
+              <input type="hidden" name="stored_image" value="">
             </div>
             <div class="form-group">
               <input class="form-control form-control-lg" type="file" multiple name="images[]" value="">
@@ -174,13 +177,19 @@ class Editor extends Database
         $element_text = filter_var($_POST['text'], FILTER_SANITIZE_STRING);
       }
 
+      if (!empty($_FILES['images'])) {
+        $image = $_FILES['images']['name'][0];
+      } else {
+        $image = $_POST['stored_image'];
+      }
+
       if (!$error) {
         $element_type = $_POST['content'][0];
         $element_id = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
         $element_date = filter_var(substr(date("Y-m-d H:i:sa"), 0, -2), FILTER_SANITIZE_STRING);
 
         $image_dir = '../public/img/';
-        $element_image = filter_var($_FILES['images']['name'][0], FILTER_SANITIZE_STRING);
+        $element_image = filter_var($image, FILTER_SANITIZE_STRING);
         move_uploaded_file($_FILES['images']['tmp_name'][0], $image_dir . $element_image);
 
         $username = $_SESSION['user'];

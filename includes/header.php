@@ -146,11 +146,16 @@ $user = new User();
       </div>
 
       <!-- check if user is logged  -->
-      <div class="my-1 rounded bg-warning">
-        <div class="nav-scroller p-3 navi rounded">
-          <?php $user->is_logged(); ?>
+      <?php if (isset($_SESSION['logged_in']) && ($_SESSION['logged_in'] == true)) {
+        ?>
+        <div class="my-1 rounded bg-warning">
+          <div class="nav-scroller p-3 navi rounded">
+            <?php $user->is_logged(); ?>
+          </div>
         </div>
-      </div>
+        <?php
+      }
+      ?>
     </section>
   </header>
 

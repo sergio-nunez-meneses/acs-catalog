@@ -102,7 +102,7 @@ class User extends Database
   }
   public function is_logged() {
     if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-      echo '<p style="color: #fff;">not logged in</p>';
+      return;
     } else {
       include ABS_PATH . 'includes/login_nav.php';
     }

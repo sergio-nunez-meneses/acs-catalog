@@ -155,14 +155,16 @@ class Articles extends Database
     $shorten_text = substr($article['article_text'], 0, 80);
     ?>
 
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
-      <p class="lead my-3"><?php echo $shorten_text; ?></p>
-      <p class="lead mb-0">
-        <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="text-white font-weight-bold">
-          Continue reading...
-        </a>
-      </p>
+    <div class="jumbotron my-2 p-4 p-md-5 text-dark rounded" style="background-image: url(<?php echo '\'' . 'public/img/' . $article['article_image'] . '\''; ?>);">
+      <div class="col-md-12 px-0">
+        <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
+        <p class="lead my-3"><?php echo $shorten_text; ?></p>
+        <p class="lead mb-0">
+          <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="text-dark font-weight-bold">
+            Continue reading...
+          </a>
+        </p>
+      </div>
     </div>
 
     <?php

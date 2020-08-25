@@ -17,9 +17,7 @@ include 'includes/header.php';
 
   <!-- 'À LA UNE' -->
   <section>
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-      <?php echo (new Articles())->display_last_article(); ?>
-    </div>
+    <?php echo (new Articles())->display_last_article(); ?>
   </section>
 
   <!-- DISPLAY ARTICLES -->
