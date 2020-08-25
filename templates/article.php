@@ -1,12 +1,6 @@
 <?php
 $title = 'article ' . $_GET['id'];
 include '../includes/header.php';
-
-if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-  ?>
-  <button class="articlesbutton" id="handler-tab">edit</button>
-  <?php
-}
 ?>
 <div class="container">
   <div class="row">
@@ -21,12 +15,14 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
       <div id="articleContainer">
         <?php (new Articles())->display_article_main(); ?>
       </div>
-      <div id="editorContainer" class="editor hidden">
-        <span id="closeEditor" class="close cursor text-white text-uppercase">&times;</span>
-        <?php (new Editor())->content_editor(); ?>
-      </div>
-      <div class="">
-        <p id="ajaxResponse" class="info"></p>
+      <div id="topForm" class="top-form position-fixed">
+        <a id="closeTop" href="javascript:void(0)" class="close-btn d-block position-absolute text-decoration-none">&times;</a>
+        <div class="side-form-content w-100 position-relative text-center">
+          <?php (new Editor())->content_editor(); ?>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p id="ajaxResponse" class="lead text-danger"></p>
+        </div>
       </div>
     </div>
 

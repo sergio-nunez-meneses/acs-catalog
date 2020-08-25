@@ -1,133 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open + Sans);
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans";
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 button{
   position: center;
 }
 
-#showForms {
-	background:linear-gradient(to bottom, #174275 5%, #061017 100%);
-	background-color:#174275;
-	border-radius:34px;
-	display:inline-block;
-	cursor:pointer;
-	color:#fafafa;
-	font-family:Arial;
-	font-size:17px;
-	font-weight:bold;
-	padding:18px 31px;
-	text-decoration:none;
-	text-shadow:0px -4px 0px #030d01;
-}
-#showForms:hover {
-	background:linear-gradient(to bottom, #061017 5%, #174275 100%);
-	background-color:#061017;
-}
-#showForms:active {
-	position:relative;
-	top:1px;
-}
-
-
-.myButton {
-	background:linear-gradient(to bottom, #174275 5%, #061017 100%);
-	background-color:#174275;
-	border-radius:34px;
-	display:inline-block;
-	cursor:pointer;
-	color:#fafafa;
-	font-family:Arial;
-	font-size:17px;
-	font-weight:bold;
-	padding:18px 31px;
-	text-decoration:none;
-	text-shadow:0px -4px 0px #030d01;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #061017 5%, #174275 100%);
-	background-color:#061017;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-.articlesbutton {
-  box-shadow:inset 0px 1px 0px 0px #0077ed;
-  	background-color:#145170;
-  	border-radius:7px;
-  	display:inline-block;
-  	cursor:pointer;
-  	color:#ffffff;
-  	font-family:Arial;
-  	font-size:13px;
-  	font-weight:bold;
-  	padding:6px 24px;
-  	text-decoration:none;
-  	text-shadow:0px 1px 0px #032957;
-  }
-}
-.articlesbutton:hover {
-	background-color:#1066a3;
-}
-.articlesbutton:active {
-	position:relative;
-	top:1px;
-}
-
-.searchTerm {
-  height: 20px;
-  border: 3px solid #152f4f;
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  padding: 5px;
-  outline: none;
-  color: #9dbfaf;
-}
-
-.searchTerm:focus {
-  color: #152f4f;
-}
-
-.searchButton {
-  width: 23px;
-  height: 21px;
-  border: 1px solid #152f4f;
-  border-radius: 0 5px 5px 0;
-  background: #152f4f;
-  font-size: 20px;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-}
-
 #navbar {
   background-color: #152f4f;
-  color: white;
-  border-radius:7px;
 }
-
-#navbar a {
-  color: white;
-}
-
-.user-info {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-}
-
 
 .progress-container {
   width: 100%;
@@ -145,7 +22,6 @@ button{
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
   padding: 0.5rem;
 }

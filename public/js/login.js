@@ -1,4 +1,6 @@
-const FORMS_BTN = getId('showForms'),
+// const FORMS_BTN = getId('showForms'),
+const OPEN_SIDE = getId('openSide'),
+  CLOSE_SIDE = getId('closeSide'),
   SIGN_TAB = getId('sign-in-tab'),
   SIGN_IN_FORM = getId('sign-in-form'),
   SIGN_UP_FORM = getId('sign-up-form'),
@@ -15,24 +17,32 @@ function randPassGen() {
   return shuffleChars.substring(0, (CHARS.length / 4));
 }
 
-function displayDiv() {
-  var div = document.getElementById("maDIV");
-  if (div.classList.contains('hidden')) {
-    div.classList.remove('hidden');
-  } else {
-    div.classList.add('hidden');
-  }
+// function displayDiv() {
+//   var div = document.getElementById("maDIV");
+//   if (div.classList.contains('hidden')) {
+//     div.classList.remove('hidden');
+//   } else {
+//     div.classList.add('hidden');
+//   }
+// }
+
+function openSideForm() {
+  getId('sideForms').style.width = '100%';
+}
+
+function closeSideForm() {
+  getId('sideForms').style.width = '0%';
 }
 
 function displayForms() {
   if (SIGN_UP_FORM.classList.contains('hidden')) {
     SIGN_UP_FORM.classList.remove('hidden');
     SIGN_IN_FORM.classList.add('hidden');
-    SIGN_TAB.innerHTML = 'sign in';
+    SIGN_TAB.innerHTML = 'Sign in';
   } else {
     SIGN_IN_FORM.classList.remove('hidden');
     SIGN_UP_FORM.classList.add('hidden');
-    SIGN_TAB.innerHTML = 'sign up';
+    SIGN_TAB.innerHTML = 'Sign up';
   }
 }
 
@@ -112,7 +122,9 @@ function signInValidation() {
   }
 }
 
-FORMS_BTN.addEventListener('click', displayDiv);
+// FORMS_BTN.addEventListener('click', displayDiv);
+OPEN_SIDE.addEventListener('click', openSideForm);
+CLOSE_SIDE.addEventListener('click', closeSideForm);
 SIGN_TAB.addEventListener('click', displayForms);
 GEN_BTN.addEventListener('click', () => {
   let genPass = randPassGen();

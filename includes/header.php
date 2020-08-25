@@ -33,86 +33,125 @@ $user = new User();
 
   <header>
 
-    <!-- progressBar -->
-    <section>
-      <div class="header">
-        <div class="progress-container">
-          <div id="progressBar" class="progress-bar"></div>
+    <!-- progress bar -->
+    <?php if (basename($_SERVER['SCRIPT_NAME']) === 'article.php') { ?>
+      <section>
+        <div class="header">
+          <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+      </section>
+      <?php
+    }
+    ?>
+
+    <section class="container-fluid">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-4">
+          <div class="sign-form-container d-flex flex-column align-items-center">
+
+            <!-- sign forms -->
+            <button id="openSide" class="form-inline btn btn-lg btn-outline-dark align-items-center">Sign</button>
+            <div id="sideForms" class="side-form position-fixed">
+              <a id="closeSide" href="javascript:void(0)" class="close-btn d-block position-absolute text-decoration-none">&times;</a>
+              <div class="side-form-content w-100 position-relative text-center">
+                <div class="container p-3">
+                  <button id="sign-in-tab" class="btn btn-info">Sign up</button>
+                </div>
+                <!-- sign in -->
+                <div class="container">
+                  <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
+                    <fieldset class="d-flex flex-column align-content-center">
+                      <!-- <legend class="p-3 text-white">Sign in</legend> -->
+                      <div class="form-group">
+                        <input class="form-control form-control-lg" type="text" name="username" placeholder="username" required>
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control form-control-lg" type="password" name="password" placeholder="password" required>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-lg btn-primary" type="submit" name="sign-in">Sign in</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+                <!-- sign up -->
+                <div class="container">
+                  <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
+                    <fieldset class="d-flex flex-column align-content-center">
+                      <!-- <legend class="p-3 text-white">Sign up</legend> -->
+                      <div class="form-group">
+                        <input class="form-control form-control-lg" type="text" name="username" placeholder="username" required>
+                      </div>
+                      <div class="form-group">
+                        <input class="random-password form-control form-control-lg" type="password" name="password" placeholder="password" required>
+                      </div>
+                      <div class="form-group">
+                        <input class="random-password form-control form-control-lg" type="password" name="confirm-password" placeholder="confirm password" required>
+                      </div>
+                      <div class="form-group">
+                        <button id="generatorButton" class="btn btn-lg btn-primary" type="button">Generate password</button>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-lg btn-primary" type="submit" name="sign-up">Sign up</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <p id="displayErrors" class="lead text-danger"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
+            <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
+          </a>
+        </div>
+
+        <!-- search bar -->
+        <div class="col-md-4 d-flex justify-content-end align-items-center">
+          <div class="wrap">
+            <form class="form-inline" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+              <div class="form-group px-1">
+                <input type="text" class="form-control form-control-lg" placeholder="search" name="search">
+              </div>
+              <div class="form-group px-1">
+                <button type="submit" class="btn btn-lg btn-outline-secondary" name="search-btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
-
-        <div class="container-fluid">
-        <header class="blog-header py-3">
-          <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-              <section class="sign-form-container d-flex flex-column align-items-center">
-                <button id="showForms">Login</button>
-                <div id="maDIV" class="hidden">
-                  <button id="sign-in-tab" class="articlesbutton">sign up</button>
-                  <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
-                    <fieldset class="">
-                    <legend>sign in</legend>
-                    <input class="" type="text" name="username" value="" placeholder="username" required>
-                    <input class="" type="password" name="password" value="" placeholder="password" required>
-                    <input class="articlesbutton" type="submit" name="sign-in" value="sign in">
-                  </fieldset>
-                </form>
-                <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
-                  <fieldset class="">
-                    <legend>sign up</legend>
-                    <input class="" type="text" name="username" placeholder="username" required>
-                    <input class="random-password" type="password" name="password" placeholder="password" required>
-                    <input class="random-password" type="password" name="confirm-password" placeholder="confirm password" required>
-                    <input id="generatorButton" class="articlesbutton" type="button" value="generate password">
-                    <input class="articlesbutton" type="submit" name="sign-up" value="sign up">
-                  </fieldset>
-                </form>
-                <p id="displayErrors"></p>
-            </div>
-            </section>
-          </div>
-
-
-          <div class="col-4 text-center">
-            <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
-              <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
-            </a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <div class="wrap">
-              <form class="form-inline" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
-                <input type="text" class="searchTerm" placeholder="Search" name="search">
-                <button type="submit" class="searchButton" name="search-btn">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-            </div>
-          </header>
-
-          <!-- navbar -->
-          <div id="navbar">
-            <div class="nav-scroller py-1 mb-2">
-              <nav class="nav d-flex justify-content-between">
-                <a href="<?php echo REL_PATH; ?>">Home</a>
-                <a id="all_categories" class="btn" href="#">all categories</a>
-                <a id="economy" class="btn" href="#">Culture</a>
-                <a id="sport" class="btn" href="#">sport</a>
-                <a id="culture" class="btn" href="#">economy</a>
-                <a id="politics" class="btn" href="#">politics</a>
-              </nav>
-            </div>
-          </div>
-
-          <!-- check if user is logged  -->
-          <section>
-            <div class="user-info">
-              <?php $user->is_logged(); ?>
-            </div>
-          </section>
+    <section class="container-fluid">
+      <!-- navbar -->
+      <div id="navbar" class="rounded">
+        <div class="nav-scroller p-3">
+          <nav class="nav d-flex justify-content-between">
+            <a class="btn btn-lg text-white" href="<?php echo REL_PATH; ?>">Home</a>
+            <a id="all_categories" class="btn btn-lg text-white" href="javascript:void(0)">All</a>
+            <a id="economy" class="btn btn-lg text-white" href="javascript:void(0)">Culture</a>
+            <a id="sport" class="btn btn-lg text-white" href="javascript:void(0)">Sports</a>
+            <a id="culture" class="btn btn-lg text-white" href="javascript:void(0)">Economy</a>
+            <a id="politics" class="btn btn-lg text-white" href="javascript:void(0)">Politics</a>
+          </nav>
         </div>
       </div>
-    </div>
-</header>
+
+      <!-- check if user is logged  -->
+      <div class="my-1 rounded bg-warning">
+        <div class="nav-scroller p-3">
+          <?php $user->is_logged(); ?>
+        </div>
+      </div>
+    </section>
+  </header>
 
   <main>
