@@ -33,7 +33,7 @@ $user = new User();
 
   <header>
 
-    <!-- progress bar -->
+    <!-- PROGRESS BAR -->
     <?php if (basename($_SERVER['SCRIPT_NAME']) === 'article.php') { ?>
       <section>
         <div class="header">
@@ -49,9 +49,8 @@ $user = new User();
     <section class="container-fluid">
       <div class="row justify-content-between align-items-center">
         <div class="col-md-4">
+          <!-- SIGN FORMS -->
           <div class="sign-form-container d-flex flex-column align-items-center">
-
-            <!-- sign forms -->
             <button id="openSide" class="form-inline btn btn-lg btn-outline-dark align-items-center">Sign</button>
             <div id="sideForms" class="side-form position-fixed">
               <a id="closeSide" href="javascript:void(0)" class="close-btn d-block position-absolute text-decoration-none">&times;</a>
@@ -59,11 +58,10 @@ $user = new User();
                 <div class="container p-3">
                   <button id="sign-in-tab" class="btn btn-info">Sign up</button>
                 </div>
-                <!-- sign in -->
+                <!-- SIGN IN -->
                 <div class="container">
                   <form id="sign-in-form" class="" method="POST" action="models/sign_in.php">
                     <fieldset class="d-flex flex-column align-content-center">
-                      <!-- <legend class="p-3 text-white">Sign in</legend> -->
                       <div class="form-group">
                         <input class="form-control form-control-lg" type="text" name="username" placeholder="username" required>
                       </div>
@@ -76,11 +74,10 @@ $user = new User();
                     </fieldset>
                   </form>
                 </div>
-                <!-- sign up -->
+                <!-- SIGN UP -->
                 <div class="container">
                   <form id="sign-up-form" class="hidden" method="POST" action="models/sign_up.php">
                     <fieldset class="d-flex flex-column align-content-center">
-                      <!-- <legend class="p-3 text-white">Sign up</legend> -->
                       <div class="form-group">
                         <input class="form-control form-control-lg" type="text" name="username" placeholder="username" required>
                       </div>
@@ -107,18 +104,19 @@ $user = new User();
           </div>
         </div>
 
+        <!-- LOGO -->
         <div class="col-md-4 text-center">
           <a href="<?php echo REL_PATH . 'index.php' ?>" class="active">
             <img src="https://i.ibb.co/X7Zd1KY/logo1.png" alt="logo">
           </a>
         </div>
 
-        <!-- search bar -->
+        <!-- SEARCH BAR -->
         <div class="col-md-4 d-flex justify-content-end align-items-center">
           <div class="wrap">
-            <form class="form-inline" action="<?php echo REL_PATH . 'actions/search.php' ?>" method="POST">
+            <form id="searchForm" class="form-inline" action="<?php echo REL_PATH . 'actions/searching.php' ?>" method="POST">
               <div class="form-group px-1">
-                <input type="text" class="form-control form-control-lg" placeholder="search" name="search">
+                <input id="keyword" type="text" class="form-control form-control-lg" placeholder="search" name="search">
               </div>
               <div class="form-group px-1">
                 <button type="submit" class="btn btn-lg btn-outline-secondary" name="search-btn">
@@ -126,12 +124,14 @@ $user = new User();
                 </button>
               </div>
             </form>
+            <div id="articleFounds" class="text-center text-primary"></div>
           </div>
         </div>
       </div>
     </section>
+
     <section class="container-fluid">
-      <!-- navbar -->
+      <!-- NAVBAR -->
       <div id="navbar" class="rounded">
         <div class="nav-scroller p-3">
           <nav class="nav d-flex justify-content-between">
@@ -145,7 +145,7 @@ $user = new User();
         </div>
       </div>
 
-      <!-- check if user is logged  -->
+      <!-- USER NAVBAR  -->
       <?php if (isset($_SESSION['logged_in']) && ($_SESSION['logged_in'] == true)) {
         ?>
         <div class="my-1 rounded bg-warning">

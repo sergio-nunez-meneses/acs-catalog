@@ -17,15 +17,6 @@ function randPassGen() {
   return shuffleChars.substring(0, (CHARS.length / 4));
 }
 
-// function displayDiv() {
-//   var div = document.getElementById("maDIV");
-//   if (div.classList.contains('hidden')) {
-//     div.classList.remove('hidden');
-//   } else {
-//     div.classList.add('hidden');
-//   }
-// }
-
 function openSideForm() {
   getId('sideForms').style.width = '100%';
 }
