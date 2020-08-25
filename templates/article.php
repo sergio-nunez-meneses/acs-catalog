@@ -26,7 +26,7 @@ include '../includes/header.php';
       </div>
     </div>
 
-    <aside class="col-md-4 my-auto">
+    <aside class="col-md-4 my-auto py-3">
       <div class="p-5 mb-3 bg-color">
         <h4 class="font-italic">About</h4>
         <p class="mb-0">ACS News is a non profit organization with one and only aim: tell you the truth.</p>

@@ -67,7 +67,7 @@ class Editor extends Database
             <input type="hidden" name="stored_image" value="<?php echo $element[$image]; ?>">
           </div>
           <div class="form-group">
-            <input id="elementImage" class="form-control form-control-lg" type="file" multiple name="images[]" value="<?php echo $element[$image]; ?>">
+            <input id="elementImage" class="form-control form-control-lg" type="file" multiple name="images[]">
           </div>
           <div class="form-group">
             <textarea id="elementText" class="form-control form-control-lg" name="text" cols="50" rows="8" placeholder=""><?php echo $element[$text]; ?></textarea>
@@ -177,10 +177,10 @@ class Editor extends Database
         $element_text = filter_var($_POST['text'], FILTER_SANITIZE_STRING);
       }
 
-      if (!empty($_FILES['images'])) {
-        $image = $_FILES['images']['name'][0];
-      } else {
+      if (empty($_FILES['images']['name'][0])) {
         $image = $_POST['stored_image'];
+      } elseif (empty($_POST['stored_image'])) {
+        $image = $_FILES['images']['name'][0];
       }
 
       if (!$error) {
