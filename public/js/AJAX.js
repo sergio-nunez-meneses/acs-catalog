@@ -1,10 +1,18 @@
 const CREATE_TAB = getId('createTab'),
+  CLOSE_TOP = getId('closeTop'),
   CREATE_CONTAINER = getId('createContainer'),
   EDITOR_CONTAINER = getId('editorContainer'),
   ARTICLE_CONTAINER = getId('articleContainer'),
   EDITOR_TAB = getId('handler-tab'),
-  CLOSE_TAB = getId('closeEditor'),
   INFO_TEXT = getId('ajaxResponse');
+
+function openTopForm() {
+  getId('topForm').style.height = '100%';
+}
+
+function closeTopForm() {
+  getId('topForm').style.height = '0%';
+}
 
 function ajaxSuccess() {
   const AJAX_RESPONSE = JSON.parse(this.responseText);
@@ -78,34 +86,6 @@ function AJAXSubmit(oFormElement) {
   }
 }
 
-function displayAjaxForm() {
-  if (EDITOR_CONTAINER.classList.contains('hidden')) {
-    ARTICLE_CONTAINER.classList.add('hidden');
-    EDITOR_CONTAINER.classList.remove('hidden');
-    EDITOR_TAB.innerHTML = 'hide';
-  } else {
-    EDITOR_CONTAINER.classList.add('hidden');
-    ARTICLE_CONTAINER.classList.remove('hidden');
-    EDITOR_TAB.innerHTML = 'edit';
-  }
-}
-
-function displayEditor() {
-  if (CREATE_CONTAINER.classList.contains('hidden')) {
-    CREATE_CONTAINER.classList.remove('hidden');
-    CREATE_TAB.innerHTML = 'hide';
-  } else {
-    CREATE_CONTAINER.classList.add('hidden');
-    CREATE_TAB.innerHTML = 'create';
-  }
-}
-
-function closeModal() {
-  EDITOR_CONTAINER.classList.add('hidden');
-  ARTICLE_CONTAINER.classList.remove('hidden');
-  EDITOR_TAB.innerHTML = 'edit';
-}
-
-if (CREATE_TAB !== null) CREATE_TAB.addEventListener('click', displayEditor);
-if (EDITOR_TAB !== null) EDITOR_TAB.addEventListener('click', displayAjaxForm);
-if (CLOSE_TAB !== null) CLOSE_TAB.addEventListener('click', closeModal);
+if (CREATE_TAB !== null) CREATE_TAB.addEventListener('click', openTopForm);
+if (EDITOR_TAB !== null) EDITOR_TAB.addEventListener('click', openTopForm);
+if (CLOSE_TOP !== null) CLOSE_TOP.addEventListener('click', closeTopForm);

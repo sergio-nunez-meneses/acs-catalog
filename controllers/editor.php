@@ -29,44 +29,62 @@ class Editor extends Database
       $author = $stmt->fetch();
       ?>
 
-      <form id="editorForm" class="" name="editor-form" action="../actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;" style="display: flex; justify-content: center; padding: 1rem;">
-        <fieldset class="ajax-form-container" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
-          <legend>element handler</legend>
-          <select id="elementContent" class="" name="content[]">
-            <option value="<?php echo $element_type; ?>"><?php echo $element_type; ?></option>
-          </select>
-          <?php
-          if ($element[$archived]) {
-            ?>
-            <select id="elementArchive" class="" name="archive[]">
-              <option value="<?php echo $element[$archived]; ?>">archived</option>
-              <option value="0">unarchive</option>
+      <form id="editorForm" class="" name="editor-form" action="../actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+        <fieldset class="ajax-form-container d-flex flex-column align-content-center">
+          <legend class="p-3 text-white">Edit article</legend>
+          <div class="form-group">
+            <select id="elementContent" class="form-control form-control-lg" name="content[]">
+              <option value="<?php echo $element_type; ?>"><?php echo $element_type; ?></option>
             </select>
             <?php
-          } else {
+            if ($element[$archived]) {
+              ?>
+              <select id="elementArchive" class="form-control form-control-lg" name="archive[]">
+                <option value="<?php echo $element[$archived]; ?>">archived</option>
+                <option value="0">unarchive</option>
+              </select>
+              <?php
+            } else {
+              ?>
+              <select id="elementArchive" class="form-control form-control-lg" name="archive[]">
+                <option value="<?php echo $element[$archived]; ?>">unarchived</option>
+                <option value="1">archive</option>
+              </select>
+              <?php
+            }
             ?>
-            <select id="elementArchive" class="" name="archive[]">
-              <option value="<?php echo $element[$archived]; ?>">unarchived</option>
-              <option value="1">archive</option>
+          </div>
+          <div class="form-group">
+            <input id="elementId" class="form-control form-control-lg" type="number" name="id" value="<?php echo $element_id; ?>" placeholder="id: <?php echo $element_id; ?>">
+          </div>
+          <div class="form-group">
+            <input id="titleElement" class="form-control form-control-lg" type="text" name="title" value="<?php echo $element[$title]; ?>" placeholder="title: <?php echo $element[$title]; ?>">
+          </div>
+          <div class="form-group">
+            <input id="elementAuthor" class="form-control form-control-lg" type="number" name="author[]" value="<?php echo $author['author_id']; ?>" placeholder="author: <?php echo $author['author_username']; ?>">
+          </div>
+          <div class="form-group">
+            <input type="hidden" name="images[]" value="<?php echo $element[$image]; ?>">
+          </div>
+          <div class="form-group">
+            <input id="elementImage" class="form-control form-control-lg" type="file" multiple name="images[]" value="<?php echo $element[$image]; ?>">
+          </div>
+          <div class="form-group">
+            <textarea id="elementText" class="form-control form-control-lg" name="text" cols="50" rows="8" placeholder=""><?php echo $element[$text]; ?></textarea>
+          </div>
+          <legend class="p-3 text-white">Choose action</legend>
+          <div class="form-group">
+            <select id="elementAction" class="form-control form-control-lg" name="action[]">
+              <option></option>
+              <option>create</option>
+              <option>edit</option>
+              <option>archive</option>
+              <option>delete</option>
             </select>
-            <?php
-          }
-          ?>
-          <input id="elementId" class="" type="number" name="id" value="<?php echo $element_id; ?>" placeholder="id: <?php echo $element_id; ?>">
-          <input id="titleElement" class="" type="text" name="title" value="<?php echo $element[$title]; ?>" placeholder="title: <?php echo $element[$title]; ?>">
-          <input id="elementAuthor" class="" type="number" name="author[]" value="<?php echo $author['author_id']; ?>" placeholder="author: <?php echo $author['author_username']; ?>">
-          <input type="hidden" name="images[]" value="<?php echo $element[$image]; ?>">
-          <input id="elementImage" class="" type="file" multiple name="images[]" value="<?php echo $element[$image]; ?>">
-          <textarea id="elementText" class="" name="text" cols="50" rows="8" placeholder=""><?php echo $element[$text]; ?></textarea>
-          <legend>choose action</legend>
-          <select id="elementAction" class="" name="action[]">
-            <option></option>
-            <option>create</option>
-            <option>edit</option>
-            <option>archive</option>
-            <option>delete</option>
-          </select>
-          <button id="elementSubmit" class="" type="submit" name="button">submit</button>
+          </div>
+          <div class="form-group">
+            <button id="elementSubmit" class="btn btn-lg btn-primary" type="submit" name="button">Submit</button>
+          </div>
         </fieldset>
       </form>
       <?php
@@ -79,29 +97,47 @@ class Editor extends Database
       $last_id = $stmt->fetch();
       ?>
 
-      <form id="editorForm" class="" action="actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;" style="display: flex; justify-content: center; padding: 1rem;">
-        <fieldset class="ajax-form-container" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
-          <legend>create element</legend>
-          <select class="" name="content[]">
-            <option value=""></option>
-            <option value="articles">article</option>
-          </select>
-          <input class="" type="number" name="id" value="<?php echo $last_id['total'] + 1; ?>" placeholder="element id:">
-          <input class="" type="text" name="title" value="" placeholder="element title:">
-          <input class="" type="number" name="author" value="<?php echo $author['author_id']; ?>" placeholder="author:">
-          <input class="" type="file" multiple name="images[]" value="">
-          <textarea class="" name="text" cols="50" rows="8" placeholder="element text"></textarea>
-          <legend>choose action</legend>
-          <select class="" name="action[]">
-            <option></option>
-            <option>create</option>
-            <option>edit</option>
-            <option>archive</option>
-            <option>delete</option>
-          </select>
-          <button id="elementSubmit" class="" type="submit" name="button">submit</button>
-        </fieldset>
-      </form>
+      <div class="container">
+        <form id="editorForm" class="" action="actions/process_content.php" method="POST" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+          <fieldset class="ajax-form-container" class="d-flex flex-column align-content-center">
+            <legend class="p-3 text-white">Create article</legend>
+            <div class="form-group">
+              <select class="form-control form-control-lg" name="content[]">
+                <option value=""></option>
+                <option value="articles">article</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input class="form-control form-control-lg" type="number" name="id" value="<?php echo $last_id['total'] + 1; ?>" placeholder="element id:">
+            </div>
+            <div class="form-group">
+              <input class="form-control form-control-lg" type="text" name="title" value="" placeholder="element title:">
+            </div>
+            <div class="form-group">
+              <input class="form-control form-control-lg" type="number" name="author" value="<?php echo $author['author_id']; ?>" placeholder="author:">
+            </div>
+            <div class="form-group">
+              <input class="form-control form-control-lg" type="file" multiple name="images[]" value="">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control form-control-lg" name="text" cols="50" rows="8" placeholder="element text"></textarea>
+            </div>
+            <legend class="p-3 text-white">Choose action</legend>
+            <div class="form-group">
+              <select class="form-control form-control-lg" name="action[]">
+                <option></option>
+                <option>create</option>
+                <option>edit</option>
+                <option>archive</option>
+                <option>delete</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button id="elementSubmit" class="btn btn-lg btn-primary" type="submit" name="button">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
       <?php
     }
   }

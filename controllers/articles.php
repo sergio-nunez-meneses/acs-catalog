@@ -4,7 +4,7 @@ require_once 'db.php';
 class Articles extends Database
 {
 
-  public function display_all_elements($element)
+  public function display_all_articles($element)
   {
     if ($element === 'articles') {
       $data = $this->run_query('SELECT * FROM articles WHERE article_archived = 0 ORDER BY article_id DESC LIMIT 10');
@@ -40,11 +40,13 @@ class Articles extends Database
             </h2>
             <p class="news-card__post-date"><?php echo $formatted_date; ?></p>
             <p class="element-author">by <?php echo $row[$author]; ?></p>
-
           </header>
           <main class="news-card__details-wrapper">
             <p class="news-card__excerpt"><?php echo $shorten_text; ?>&hellip;</p>
-            <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+            <a href="templates/article.php?id=<?php echo $row[$id]; ?>&element=<?php echo $element; ?>" class="news-card__read-more">
+              Read more
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
           </main>
         </div>
       </article>
@@ -143,9 +145,25 @@ class Articles extends Database
 
   public function display_last_article()
   {
+    $element = 'articles';
     $stmt = $this->run_query('SELECT * FROM articles ORDER BY DATETIME DESC LIMIT 1');
     $article = $stmt->fetch();
-    return $article;
+
+    $shorten_text = $article['article_text'];
+    $shorten_text = substr($article['article_text'], 0, 80);
+    ?>
+
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
+      <p class="lead my-3"><?php echo $shorten_text; ?></p>
+      <p class="lead mb-0">
+        <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="text-white font-weight-bold">
+          Continue reading...
+        </a>
+      </p>
+    </div>
+
+    <?php
   }
 
   public function get_article_link() {
