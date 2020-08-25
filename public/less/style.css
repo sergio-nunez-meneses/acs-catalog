@@ -15,6 +15,12 @@ body {
   height: 6px;
   width: 0%;
 }
+.navi {
+  background-color: #b9cbc0;
+}
+.bg-color {
+  background-color: #b9cbc0;
+}
 .hidden {
   display: none !important;
 }
