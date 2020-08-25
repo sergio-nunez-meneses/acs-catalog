@@ -148,7 +148,7 @@ class Articles extends Database
   public function display_last_article()
   {
     $element = 'articles';
-    $stmt = $this->run_query('SELECT * FROM articles ORDER BY DATETIME DESC LIMIT 1');
+    $stmt = $this->run_query('SELECT * FROM articles WHERE article_archived = 0 ORDER BY DATETIME DESC LIMIT 1');
     $article = $stmt->fetch();
 
     $shorten_text = $article['article_text'];
