@@ -72,12 +72,11 @@ class Articles extends Database
       ?>
       <article class="">
         <header>
-          <div class="row flex-column">
-            <h4>Category</h4>
+          <div class="row flex-column pt-3">
+                <h2 id="title-<?php echo $element_id; ?>" class="text-capitalize font-weight-bolder"><?php echo $element[$title]; ?></h2>
             <hr class="horizontal-line bg-info">
-            <p id="date-<?php echo $element_id; ?>" class="">On <?php echo $formatted_date; ?></p>
-            <h2 id="title-<?php echo $element_id; ?>" class=""><?php echo $element[$title]; ?></h2>
-            <p id="author-<?php echo $element_id; ?>" class="">By <?php echo $author_name['author_username']; ?></p>
+                <p id="date-<?php echo $element_id; ?>" class="">On <?php echo $formatted_date; ?></p>
+                <p id="author-<?php echo $element_id; ?>" class="text-capitalize font-italic">By <?php echo $author_name['author_username']; ?></p>
           </div>
           <img id="image-<?php echo $element_id; ?>" src="<?php echo '../public/img/' . $element[$image]; ?>" alt="" class="article-image img-fluid ">
           <div class="row">
@@ -121,10 +120,18 @@ class Articles extends Database
       <footer>
         <h4>Share this shit</h4>
         <div class="row justify-content-around p-3">
-          <button class="btn btn-dark" type="button" name="button">icon</button>
-          <button class="btn btn-dark" type="button" name="button">icon</button>
-          <button class="btn btn-dark" type="button" name="button">icon</button>
-          <button id="copyLink" class="btn btn-dark" type="button" name="button">copy article link</button>
+          <div class="">
+            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-twitter mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+          </div>
+          <div class="">
+            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-linkedin mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+          </div>
+          <div class="">
+            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+          </div>
+          <div id="copyLink">
+            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-copy mx-auto my-3 py-2 pr-4 pl-2 text-center text-decoration-none"></a>
+          </div>
         </div>
         <hr class="horizontal-line bg-info">
         <div class="row p-3 justify-content-around">
