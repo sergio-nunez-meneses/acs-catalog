@@ -18,6 +18,14 @@ button{
   width: 0%;
 }
 
+.navi{
+  background-color: #b9cbc0;
+}
+
+.bg-color{
+    background-color: #b9cbc0;
+}
+
 .content-wrapper {
   margin: 0 auto;
   max-width: 1200px;

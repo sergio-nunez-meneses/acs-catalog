@@ -27,12 +27,12 @@ include '../includes/header.php';
     </div>
 
     <aside class="col-md-4 my-auto">
-      <div class="p-5 mb-3 bg-warning">
+      <div class="p-5 mb-3 bg-color">
         <h4 class="font-italic">About</h4>
         <p class="mb-0">ACS News is a non profit organization with one and only aim: tell you the truth.</p>
         <div class="d-flex justify-content-around pt-4">
           <div class="">
-            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
+            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook ml-3 my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
           </div>
           <div class="">
             <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-twitter mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
