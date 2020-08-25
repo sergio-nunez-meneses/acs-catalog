@@ -38,7 +38,7 @@ $user = new User();
       <section>
         <div class="header">
           <div class="progress-container w-100 position-fixed">
-            <div id="progressBar" class="progress-bar w-0 bg-primary"></div>
+            <div id="progressBar" class="progress-bar bg-primary"></div>
           </div>
         </div>
       </section>
