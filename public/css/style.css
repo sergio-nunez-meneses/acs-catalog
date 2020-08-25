@@ -22,6 +22,46 @@ li {
  padding: 5px;
 }
 
+/* FOOTER */
+.footer {
+  background: #152F4F;
+  color: white;
+}
+.footer .links ul {
+  list-style-type: none;
+}
+.footer .links img{
+  padding-left: 1px;
+}
+.footer .links li a {
+  display: block;
+  color: white;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+.footer .links li a:hover {
+  text-decoration: none;
+  color: #4180CB;
+}
+.footer .about-company i {
+  font-size: 25px;
+}
+.footer .about-company a {
+  padding-left: 20px;
+  color: white;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+.footer .about-company a:hover {
+  color: #4180CB;
+}
+.footer .location i {
+  font-size: 18px;
+}
+.footer .copyright p {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 @media screen and (max-width: 600px) {
   #navbar .search-container {
     float: none;
@@ -39,40 +79,4 @@ li {
   #navbar input[type=text] {
     border: 1px solid #ccc;
   }
-}
-
-/* FOOTER */
-.footer {
-  background: #152F4F;
-  color: white;
-}
-.footer .links ul {
-  list-style-type: none;
-}
-.footer .links li a {
-  display: block;
-  color: white;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-.footer .links li a:hover {
-  text-decoration: none;
-  color: #4180CB;
-}
-.footer .about-company i {
-  font-size: 25px;
-}
-.footer .about-company a {
-  color: white;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-.footer .about-company a:hover {
-  color: #4180CB;
-}
-.footer .location i {
-  font-size: 18px;
-}
-.footer .copyright p {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

@@ -10,6 +10,7 @@ body {
 .progress-container {
   height: 6px;
   background: #ccc;
+  z-index: 1;
 }
 .progress-container .progress-bar {
   height: 6px;

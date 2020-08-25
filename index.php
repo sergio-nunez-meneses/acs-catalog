@@ -4,24 +4,25 @@ include 'includes/header.php';
 ?>
 
 <div class="container">
-  <!-- errors display -->
+
+  <!-- DISPLAY ERRORS -->
   <section>
     <div class="d-flex justify-content-center">
       <?php if (!empty($_GET['error'])) echo $_GET['error_message']; ?>
     </div>
   </section>
 
-  <!-- social-bar -->
+  <!-- SOCIAL SIDEBAR -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3e67e0bb613bef"></script>
 
-  <!-- 'à la une' -->
+  <!-- 'À LA UNE' -->
   <section>
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <?php echo (new Articles())->display_last_article(); ?>
     </div>
   </section>
 
-  <!-- display articles -->
+  <!-- DISPLAY ARTICLES -->
   <section>
     <div class="container">
       <div id="recentArticles" class="row justify-content-center">
@@ -33,7 +34,15 @@ include 'includes/header.php';
     </div>
   </section>
 
-  <!-- create article -->
+  <!-- DISPLAY CREATED ARTICLE -->
+  <section>
+    <div id="createContainer" class="hidden">
+      <div id="newArticleContainer" class="">
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITOR FORM -->
   <section>
     <div id="topForm" class="top-form position-fixed">
       <a id="closeTop" href="javascript:void(0)" class="close-btn d-block position-absolute text-decoration-none">&times;</a>
@@ -45,6 +54,7 @@ include 'includes/header.php';
       </div>
     </div>
   </section>
+
 </div>
 
 <?php include 'includes/footer.php'; ?>

@@ -118,7 +118,7 @@ class Articles extends Database
       </main>
       <hr class="horizontal-line bg-info">
       <footer>
-        <h4>Share this shit</h4>
+        <h4>Share this:</h4>
         <div class="row justify-content-around p-3">
           <div class="">
             <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-twitter mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
@@ -130,7 +130,7 @@ class Articles extends Database
             <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-facebook mx-auto my-3 py-2 pr-4 pl-2 text-white text-center text-decoration-none"></a>
           </div>
           <div id="copyLink">
-            <a href="<?php echo (new Articles())->get_article_link(); ?>" class="fa fa-copy mx-auto my-3 py-2 pr-4 pl-2 text-center text-decoration-none"></a>
+            <a href="javascript:void(0)" class="fa fa-copy mx-auto my-3 py-2 pr-4 pl-2 text-center text-decoration-none"></a>
           </div>
         </div>
         <hr class="horizontal-line bg-info">

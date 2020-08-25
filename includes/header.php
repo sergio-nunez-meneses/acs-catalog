@@ -147,7 +147,7 @@ $user = new User();
 
       <!-- check if user is logged  -->
       <div class="my-1 rounded bg-warning">
-        <div class="nav-scroller p-3 navi">
+        <div class="nav-scroller p-3 navi rounded">
           <?php $user->is_logged(); ?>
         </div>
       </div>

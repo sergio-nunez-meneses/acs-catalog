@@ -7,7 +7,7 @@ $keyword = '%' . $_POST['search'] . '%';
 
 if (!empty($keyword)) {
   // article_genre column must be renamed to article_category and be placed before DATETIME column
-  $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_genre LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
+  $articles = (new Database())->run_query("SELECT * FROM articles WHERE article_title LIKE :keyword OR article_text LIKE :keyword OR article_category LIKE :keyword OR DATETIME LIKE :keyword", ['keyword' => $keyword])->fetchAll();
 
   $searchbtn = $_POST['search-btn'];
   $search = $_POST['search'];
@@ -17,7 +17,7 @@ if (!empty($keyword)) {
   if (!empty($articles)) {
     foreach($articles as $article) {
       ?>
-      
+
   <div class='search_pad'>
     <div class='afterpad row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>
 

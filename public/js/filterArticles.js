@@ -6,11 +6,11 @@ function displayArticles() {
   if (ALL_ARTICLES.classList.contains('hidden')) {
     RECENT_ARTICLES.classList.add('hidden');
     ALL_ARTICLES.classList.remove('hidden');
-    ARTICLES_TAB.innerHTML = 'filter articles';
+    ARTICLES_TAB.innerHTML = 'Filter articles';
   } else {
     RECENT_ARTICLES.classList.remove('hidden');
     ALL_ARTICLES.classList.add('hidden');
-    ARTICLES_TAB.innerHTML = 'all articles';
+    ARTICLES_TAB.innerHTML = 'Display all articles';
   }
 }
 
