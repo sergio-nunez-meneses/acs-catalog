@@ -208,8 +208,11 @@ class Editor extends Database
               'element_archived' => $element_archived,
               'author_id' => $author_id
             ]);
+
             (new Mail())->inform_subscriber();
+
           }
+          $element_image = '/acs-catalog/public/img/' . $element_image;
           $action = $_POST['action'][0];
           $action_msg .= '<p>element created</p>';
         } elseif ($_POST['action'][0] === 'edit') {
@@ -225,6 +228,7 @@ class Editor extends Database
               'element_id' => $element_id
             ]);
           }
+          $element_image = $image_dir . $element_image;
           $action = $_POST['action'][0];
           $action_msg .= '<p>element edited</p>';
         } elseif ($_POST['action'][0] === 'archive') {
@@ -258,7 +262,7 @@ class Editor extends Database
           'title' => $element_title,
           'text' => $element_text,
           'date' => $element_date,
-          'image' => $image_dir . $element_image,
+          'image' => $element_image,
           'author' => $author_id
         ];
         echo json_encode($array);

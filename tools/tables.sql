@@ -16,3 +16,9 @@ CREATE TABLE articles(
   PRIMARY KEY (article_id),
   FOREIGN KEY (author_id) REFERENCES authors(author_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE subscription (
+  mail_id INT AUTO_INCREMENT NOT NULL,
+  mail_registered VARCHAR(200) NOT NULL,
+  PRIMARY KEY (mail_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

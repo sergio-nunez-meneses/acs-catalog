@@ -48,7 +48,7 @@ function ajaxSuccess() {
       title.setAttribute('id', 'title-' + AJAX_RESPONSE['id']);
       title.innerHTML = AJAX_RESPONSE['title'];
       image.setAttribute('id', 'image-' + AJAX_RESPONSE['id']);
-      image.setAttribute('src', 'acs-catalog/public/img/' + AJAX_RESPONSE['image']);
+      image.setAttribute('src', AJAX_RESPONSE['image']);
       date.setAttribute('id', 'date-' + AJAX_RESPONSE['id']);
       date.innerHTML = AJAX_RESPONSE['date'];
       author.setAttribute('id', 'author-' + AJAX_RESPONSE['id']);

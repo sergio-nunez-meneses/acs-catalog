@@ -39,39 +39,25 @@ class Mail extends Database
 
       if ($already_subscribed == false) {
         $to = 'To: contact@site.com';
-        $subject = "message from somebody";
-        $message = 'Test';
+        $subject = "New subscription";
+        $message = "New subscription from $email";
         $headers = "From: $email";
 
         if (mail($to, $subject, $message, $headers)) {
           $this->subscribe($email);
 
           $info .= 'mail sucessfully sent!';
-          echo $info;
-          // back to ajax.js
-          // $array = [
-          //   'form' => $form,
-          //   'info' => $info,
-          //   'error' => ''
-          // ];
-          // echo json_encode($array);
-          header('Location:../index.php');
+          header("Location:../index.php?info=$info");
         } else {
           $info .= 'failed to send email!';
-          echo $info;
+          header("Location:../index.php?info=$info");
         }
       } else {
-        echo 'You are already subscribed';
+        $error_msg = 'You are already subscribed';
+        header("Location:../index.php?info=$error_msg");
       }
     } else {
-      echo $error_msg;
-      // back to ajax.js
-      // $array = [
-      //   'form' => $form,
-      //   'info' => '',
-      //   'error' => $error_message
-      // ];
-      // echo json_encode($array);
+      header("Location:../index.php?info=$error_msg");
     }
   }
 

@@ -33,6 +33,13 @@ $user = new User();
 
   <header>
 
+    <!-- DISPLAY SUBSCRIPTION INFO -->
+    <section>
+      <div class="d-flex justify-content-center">
+        <?php if (!empty($_GET['info'])) echo '<script type=text/javascript> alert("' . $_GET['info'] . '"); </script>'; ?>
+      </div>
+    </section>
+
     <!-- PROGRESS BAR -->
     <?php if (basename($_SERVER['SCRIPT_NAME']) === 'article.php') { ?>
       <section>

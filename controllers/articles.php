@@ -155,19 +155,17 @@ class Articles extends Database
     $shorten_text = substr($article['article_text'], 0, 200);
     ?>
 
-    <div class="jumbo jumbotron mw-100 my-2 rounded">
-      <a class="text-decoration-none" href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>">
+    <div class="jumbo jumbotron mw-100 my-2 p-5 rounded">
+      <!-- <a class="text-decoration-none" href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>"> -->
         <img class="jumbo-img w-100" src="public/img/<?php echo $article['article_image']; ?>" alt="">
-        <div class="jumbo-box col-md-12 p-3">
-          <h1 class="display-4 font-italic"><?php echo $article['article_title']; ?></h1>
-          <p class="lead my-3"><?php echo $shorten_text; ?>...</p>
-          <p class="lead mb-0">
-            <a href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>" class="font-weight-bold">
-              <button type="button" class="btn btn-lg bg-dark text-white" name="button">Continue reading...</button>
-            </a>
-          </p>
+        <div class="jumbo-box col-md-12 p-5">
+          <h1 class="mt-2 mb-5 font-italic"><?php echo $article['article_title']; ?></h1>
+          <p class="lead mb-5 pt-3 pb-5"><?php echo $shorten_text; ?>...</p>
+          <a class="mt-5 font-weight-bold" href="templates/article.php?id=<?php echo $article['article_id']; ?>&element=<?php echo $element; ?>">
+            <button type="button" class="btn btn-lg bg-dark text-white" name="button">Continue reading</button>
+          </a>
         </div>
-      </a>
+      <!-- </a> -->
     </div>
 
     <?php
